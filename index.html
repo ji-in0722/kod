@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kodivac.kod</title>
+    <script src="/js/jquery.js"></script>
+    <!-- <script src="/js/jquery-ui-min.js"></script>
+    <script src="/js/jquery.form.js"></script> -->
+    <script src="/js/common.js"></script>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <script>
+        var NavSizeInit = function() {
+            var _self = $(this);
+
+            if($('body').hasClass('padActive')) {
+            } else {
+                var target = $(this).find('div.depth2');
+                $('div.depth2').hide();
+
+                target.show();
+            };
+
+            _self.find('div.depth2 ul li').each(function() {
+                var navSize = _self.find('div.depth2').width();
+                var spanW = $(this).find('span').width() + 48;
+                if(spanW > navSize) {
+                    var navSize = spanW;
+                    var totalSize = navSize;
+                    _self.find('div.depth2').css('width', totalSize + 'px');
+                };
+            });
+        };
+
+        var NavInit = function() { // 안씀
+            $('#gnb ul.navi.depth1 > li').each(function() {
+                var nameWidth = $(this).find('span.name').width();
+                var subNameWidth = $(this).find('span.subName').innerWidth();
+
+                var width = nameWidth > subNameWidth ? nameWidth : subNameWidth;
+                $(this).children('a').css('width', width + 20 + 'px');
+            });
+        };
+
+        var SearchOn = function() {
+
+            $(this).parents('form').addClass('active');
+        };
+
+        var SearchOff = function() {
+            $(this).parents('form').removeClass('active');
+        };
+
+        var PadNavToggle = function() {
+            var _self = $(this);
+            var target = $(this).next('div.depth2');
+
+
+            if(target.hasClass('active')) {
+                _self.removeClass('active');
+                target.removeClass('active').hide();
+            } else {
+                $('#gnb ul.depth1 > li > a').removeClass('active');
+                $('#gnb ul.depth1 > li div.depth2').removeClass('active').hide();
+                _self.addClass('active');
+                target.addClass('active').show();
+            };
+
+            _self.next('div.depth2').find('li').each(function() {
+                var navSize = _self.next('div.depth2').width();
+                var spanW = $(this).find('span').width() + 48;
+
+                if(spanW > navSize) {
+                    var navSize = spanW;
+                    var totalSize = navSize;
+                    _self.next('div.depth2').css('width', totalSize + 'px');
+                };
+            });
+
+            return false;
+        };
+
+        var NavClose = function() {
+            $('div.depth2').hide();
+        };
+
+        $(function() {
+            $('#gnb ul.navi.depth1 > li').mouseover(NavSizeInit);
+            // NavInit();
+
+            $('input.search').focus(SearchOn);
+            $('input.search').blur(SearchOff);
+
+            if($('body').hasClass('padActive')) {
+                $('#gnb ul.navi.depth1 > li > a').click(PadNavToggle);
+            } else {
+                $('#gnb ul.navi.depth1 > li').mouseleave(NavClose);
+            };
+        });
+    </script>
+    <script>
+        var SideNavInit = function() {
+            $('div.navList div.depth2').each(function() {
+                $(this).parent().addClass('hasChild');
+
+            });
+
+            var winH = $(window).height();
+            var sideNavHeight = winH - 69;
+            $('div.navListBox').css('height', sideNavHeight + 'px');
+
+        };
+
+        var ShowSideNavi = function() {
+
+            $('#sideNav').show();
+            $('#sideNav div.navBox').animate({
+                'right': '0'
+            }, 300, function() {
+                $(this).addClass('active');
+            });
+        };
+
+        var CloseSideNavi = function() {
+
+            $('#sideNav div.navBox').animate({
+                'right': '-300px'
+            }, 300, function() {
+                $(this).removeClass('active');
+                $('#sideNav').hide();
+            });
+        };
+
+
+        var NavToggle = function() {
+            var target = $(this).next('.depth2');
+
+            if(target.hasClass('active') == false && $('div.depth2.active').length > 0) { // 선택한 객체의 depth2는 닫혀 있고, 다른 메뉴가 열려 있을 때
+                $('div.navList ul li a.active').removeClass('active');
+
+                $('div.depth2.active').removeClass('active').stop(true, true).slideUp(200);
+                // $('div.navList .depth3.active').removeClass('active').slideUp(200);
+                target.addClass('active').stop(true, true).slideDown(200);
+                $(this).addClass('active');
+            } else {
+                if(target.hasClass('active')) { // 선택한 객체에 하위메뉴가 열려 있을 시
+                    $(this).removeClass('active');
+                    target.removeClass('active').stop(true, true).slideUp(200);
+                    $('div.navList .depth3.active').removeClass('active').stop(true, true).slideUp(200);
+                } else { // 선택 객체 하위메뉴 없을 시 그냥 오픈
+                    target.addClass('active').stop(true, true).slideDown(200);
+                    $(this).addClass('active');
+                };
+            };
+
+            return false;
+        };
+
+        $(function() {
+            SideNavInit();
+            $('div.sideBtn button').click(ShowSideNavi);
+            $('#sideNav button.navClose, #sideNav div.back').click(CloseSideNavi);
+            $("div.navList ul.depth1 li.hasChild > a").click(NavToggle);
+        });
+    </script>
+
+    <div class="wrap">
+        <div id="header">
+            <div class="innerWrap">
+                <h1>
+                    <a href="/" title="(주)코디박">
+                        <img src="" alt="(주)코디박" /></a>
+                </h1>
+
+                <div id="gnb">
+                    <ul class="navi depth1">
+                        <li class="intro hasChild">
+                            <a href="/intro" target="_self" title="회사소개" class="intro hasChild"><span class="name">회사소개</span><span class="subName">COMPANY</span></a>
+                            <div class="child depth2">
+                                <ul class="navi depth2">
+                                    <li class="greeting">
+                                        <a href="/html/company/greeting.html" target="_self" title="인사말" class="greeting">
+                                            <span class="name">인사말</span><span class="subName">Greeting</span>
+                                        </a>
+                                    </li>
+                                    <!-- <li class="organization"><a href="/intro/organization" target="_self" title="조직구성"
+                                            class="organization"><span class="name">조직구성</span><span
+                                                class="subName">Organization</span></a></li> -->
+                                    <li class="vision">
+                                        <a href="/intro/vision" target="_self" title="비전" class="vision">
+                                            <span class="name">비전</span><span class="subName">Vision</span>
+                                        </a>
+                                    </li>
+                                    <li class="machine">
+                                        <a href="/intro/machine" target="_self" title="보유기계 및 장비현황" class="machine">
+                                            <span class="name">보유기계 및 장비현황</span><span class="subName">Machine</span>
+                                        </a>
+                                    </li>
+                                    <!-- <li class="agency"><a href="/intro/agency" target="_self" title="대리점 현황"
+                                            class="agency"><span class="name">대리점 현황</span><span
+                                                class="subName">Agency</span></a></li>
+                                    <li class="location"><a href="/intro/location" target="_self" title="오시는길"
+                                            class="location"><span class="name">오시는길</span><span
+                                                class="subName">Location</span></a></li> -->
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- <li class="products hasChild"><a href="/products" target="_self" title="제품목록"
+                                class="products hasChild"><span class="name">제품목록</span><span
+                                    class="subName">PRODUCT</span></a>
+                            <div class="child depth2">
+                                <ul class="navi depth2">
+                                    <li class="261"><a href="/products/261" target="_self" title="Oil Rotary Pump"
+                                            class="261"><span class="name">Oil Rotary Pump</span><span
+                                                class="subName">오일 로터리 펌프</span></a></li>
+                                    <li class="274"><a href="/products/274" target="_self"
+                                            title="Belt Driven Rotary Vane Pump" class="274"><span class="name">Belt
+                                                Driven Rotary Vane Pump</span><span class="subName">벨트 드레인 로터리 베인
+                                                펌프</span></a></li>
+                                    <li class="275"><a href="/products/275" target="_self" title="Piston Rotary Pump"
+                                            class="275"><span class="name">Piston Rotary Pump</span><span
+                                                class="subName">피스톤 로터리 펌프</span></a></li>
+                                    <li class="276"><a href="/products/276" target="_self"
+                                            title="Mechanical Booster Pump" class="276"><span class="name">Mechanical
+                                                Booster Pump</span><span class="subName">메크니컬 부스터 펌프</span></a></li>
+                                    <li class="277"><a href="/products/277" target="_self" title="Oil Diffusion Pump"
+                                            class="277"><span class="name">Oil Diffusion Pump</span><span
+                                                class="subName">오일 디퓨전 펌프</span></a></li>
+                                    <li class="281"><a href="/products/281" target="_self" title="Valves"
+                                            class="281"><span class="name">Valves</span><span
+                                                class="subName">밸브</span></a></li>
+                                    <li class="287"><a href="/products/287" target="_self" title="Flange"
+                                            class="287"><span class="name">Flange</span><span
+                                                class="subName">플랜지</span></a></li>
+                                    <li class="292"><a href="/products/292" target="_self" title="Fitting"
+                                            class="292"><span class="name">Fitting</span><span
+                                                class="subName">피팅</span></a></li>
+                                    <li class="296"><a href="/products/296" target="_self" title="Gauge"
+                                            class="296"><span class="name">Gauge</span><span
+                                                class="subName">게이지</span></a></li>
+                                    <li class="303"><a href="/products/303" target="_self" title="System"
+                                            class="303"><span class="name">System</span><span
+                                                class="subName">시스템</span></a></li>
+                                    <li class="272"><a href="/products/272" target="_self" title="설명" class="272"><span class="name">설명</span></a></li>
+                                </ul>
+                            </div>
+                        </li> -->
+                        <!-- <li class="community hasChild"><a href="/community" target="_self" title="자료실"
+                                class="community hasChild"><span class="name">자료실</span><span
+                                    class="subName">DATA</span></a>
+                            <div class="child depth2">
+                                <ul class="navi depth2">
+                                    <li class="data"><a href="/community/data" target="_self" title="자료실"
+                                            class="data"><span class="name">자료실</span><span
+                                                class="subName">Data</span></a></li>
+                                </ul>
+                            </div>
+                        </li> -->
+                        <li class="custom hasChild"><a href="/custom" target="_self" title="고객지원" class="custom hasChild"><span class="name">고객지원</span><span class="subName">CUSTOMER CENTER</span></a>
+                            <!-- <div class="child depth2">
+                                <ul class="navi depth2">
+                                    <li class="notice"><a href="/custom/notice" target="_self" title="공지사항"
+                                            class="notice"><span class="name">공지사항</span><span
+                                                class="subName">Notice</span></a></li>
+                                    <li class="qna"><a href="/custom/qna" target="_self" title="질문과 답변"
+                                            class="qna"><span class="name">질문과 답변</span><span
+                                                class="subName">Q&amp;A</span></a></li>
+                                    <li class="inquiry"><a href="/custom/inquiry" target="_self" title="온라인문의"
+                                            class="inquiry"><span class="name">온라인문의</span><span
+                                                class="subName">Inquiry</span></a></li>
+                                </ul>
+                            </div> -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- <div class="search">
+                    <form class="" action="/products/" method="get">
+                        <input type="search" class="search" name="keyword" value="" autocomplete="off" />
+                        <button type="submit" title="searchBtn" class="search"><span>검색</span></button>
+                    </form>
+                </div>
+                <div class="sideBtn">
+                    <button type="button" title="사이드메뉴 열기/닫기"><span>사이드메뉴 열기/닫기</span></button>
+                </div> -->
+            </div>
+        </div>
+
+        <div id="container">
+            <div id="visual">
+                <div class="visualArea">
+                    <ul class="visual">
+                        <li class="visual1" style="opacity: 1; z-index: 2;">
+                            <div class="txtBox">
+                                <span class="remark">Korea’s</span>
+                                <span class="subject">Global Vacuum Brand Enterprise</span>
+                                <span class="desc">Our company’s vision of 21st century is to lay the comerstone of Korea’s vaccum industry by becoming the best “Global Company Specialized in Vacuum” with two goals of “Global Brand of Vaccum” and “Blue-chip Company”</span>
+                            </div>
+                            <!-- <a href="javascript:;" title="vis02" style="background-image: url(&quot;/datas/visual/202508/sqJ7NYm2t7.png&quot;);"></a> -->
+                            <div class="mainVisualImg">
+                                <div class="img01"></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="shortcut">
+                        <!-- <div class="catalog">
+                            <a href="http://www.kodivac.com/resource/images/KODIVAC_LTD_catalog.pdf" download="" title="카탈로그 다운로드">
+                            <span class="innerTxt">
+                                <span class="sTitle">KODIVAC</span>
+                                <span class="title">E-Catalog</span>
+                            </span>
+                            </a>
+                        </div> -->
+                        <!-- <div class="manual">
+                            <a href="resource/images/GHP_Manual.zip?ts=202302011007" download="" title="매뉴얼 다운로드">
+                            <span class="innerTxt">
+                                <span class="sTitle">INSTRUCTION</span>
+                                <span class="title">MANUAL</span>
+                            </span>
+                            </a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="prodectCont">
+            <div id="container" class="sub">
+
+                <h2>Prodect</h2>
+                
+                <div id="page01">
+                    <div class="pageTitle">
+                        <div class="innerWrap">
+                            <div class="title">
+                                <span class="sTitle">오일 로터리 펌프</span>
+                                <span class="mTitle">Oil Rotary Pump</span>
+                            </div>
+                            <!-- <div class="common">
+                                <span>global</span>
+                                <span class="sec">kodivac</span>
+                                <span>network!</span>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div id="product">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="/products/detail/D93RP00021?ts=1792586930&amp;cate=274&amp;" class="thumb" title="GHP-150K">
+                                                <img src="/img/prodect/oil_rotary_pump/ghp_150k.jpg" alt="GHP-150K">
+                                                <span class="name">GHP-150K</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <!-- <div class="page">
+                                    <span class="devPage">
+                                        <span class="devPageBlock">
+                                            <a href="?page=1&amp;ts=1792586930&amp;" title="FIRST PAGE" class="devFirstPage disable"><span>FIRST</span></a>
+                                            <a href="?page=1&amp;ts=1792586930&amp;" title="PREV PAGE" class="devPrevPage disable"><span>PREV</span></a>
+                                        </span>
+                                        <a href="?page=1&amp;ts=1792586930&amp;" title="PAGE 1" class="devListPage devNowPage devStartPage devEndPage"><span>1</span></a>
+                                        <span class="devPageBlock">
+                                        <a href="?page=1&amp;ts=1792586930&amp;" title="NEXT PAGE" class="devNextPage disable"><span>NEXT</span></a>
+                                        <a href="?page=1&amp;ts=1792586930&amp;" title="LAST PAGE" class="devLastPage disable"><span>LAST</span></a>
+                                        </span>
+                                    </span>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page02">
+                    <div class="pageTitle">
+                        <div class="innerWrap">
+                            <div class="title">
+                                <span class="sTitle">벨트 드레인 로터리 베인 펌프</span>
+                                <span class="mTitle">Belt Driven Rotary Vane Pump</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product">
+
+                    </div>
+                </div>
+                <div id="page03">
+                    <div class="pageTitle">
+                        <div class="innerWrap">
+                            <div class="title">
+                                <span class="sTitle">피스톤 로터리 펌프</span>
+                                <span class="mTitle">Piston Rotary Pump</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product">
+                        
+                    </div>
+                </div>
+                <div id="page04">
+                    <div class="pageTitle">
+                        <div class="innerWrap">
+                            <div class="title">
+                                <span class="sTitle">메크니컬 부스터 펌프</span>
+                                <span class="mTitle">Mechanical Booster Pump</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product">
+                        
+                    </div>
+                </div>
+                <div id="page05">
+                    <div class="pageTitle">
+                        <div class="innerWrap">
+                            <div class="title">
+                                <span class="sTitle">오일 디퓨전 펌프</span>
+                                <span class="mTitle">Oil Diffusion Pump</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product">
+                        
+                    </div>
+                </div>
+                <div id="page06">
+                    <div class="pageTitle">
+                        <div class="innerWrap">
+                            <div class="title">
+                                <span class="sTitle">밸브</span>
+                                <span class="mTitle">Valves</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product">
+                        
+                    </div>
+                </div>
+                <div id="page07">
+                    <div class="pageTitle">
+                        <div class="innerWrap">
+                            <div class="title">
+                                <span class="sTitle">플랜지</span>
+                                <span class="mTitle">Flange</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product">
+                        
+                    </div>
+                </div>
+                <div id="page08">
+                    <div class="pageTitle">
+                        <div class="innerWrap">
+                            <div class="title">
+                                <span class="sTitle">피팅</span>
+                                <span class="mTitle">Fitting</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product">
+                        
+                    </div>
+                </div>
+                <div id="page09">
+                    <div class="pageTitle">
+                        <div class="innerWrap">
+                            <div class="title">
+                                <span class="sTitle">게이지</span>
+                                <span class="mTitle">Gauge</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product">
+                        
+                    </div>
+                </div>
+                <div id="page10">
+                    <div class="pageTitle">
+                        <div class="innerWrap">
+                            <div class="title">
+                                <span class="sTitle">시스템</span>
+                                <span class="mTitle">System</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product">
+                        
+                    </div>
+                </div>
+
+                <script>
+                    var noticeList = [{"IDX":"54","SUBJECT":"\ucf54\ub514\ubc15 \ud648\ud398\uc774\uc9c0\uac00 \ub9ac\ub274\uc5bc \ub418\uc5c8\uc2b5\ub2c8\ub2e4.","ARTICLE":"\ucf54\ub514\ubc15 \ud648\ud398\uc774\uc9c0\uac00 \ub9ac\ub274\uc5bc \ub418\uc5c8\uc2b5\ub2c8\ub2e4. \ub9ce\uc740 \uc774\uc6a9 \ubc14\ub78d\ub2c8\ub2e4.","NAME":"\uad8c\uad6c\uc131","CATE_CODE":null,"CATE_NAME":null,"CREATE_DATE":"2021-04-13","CREATE_DATETIME":"2021-04-13 14:30:35","LINK":"\/custom\/notice\/54"}];
+                    var noticeAct = false;
+                    var noticeObj = null;
+                    var NoticeInit = function() {
+                        if(noticeList.length) {
+                            $(noticeList).each(function() {
+                                var txt = encodeURIComponent(this.SUBJECT);
+                                var newLi = $('<li>').appendTo($('div.noticeList ul'));
+                                var newAnchor = $('<a>').attr({'href': this.LINK, 'title': this.SUBJECT}).addClass('anchor').appendTo(newLi);
+                                var newSpan = $('<span>').addClass('subject').text(this.SUBJECT).appendTo(newAnchor);
+                            })
+
+                            if(noticeList.length > 1) {
+                                var control = $('<div>').addClass('control').appendTo($('div.noticeBox div.innerNotice'));
+                                var newPrevBtn = $('<button>').attr({'type': 'button', 'title': 'listPrev'}).addClass('listPrev').html('<span>prev</span>').appendTo(control).click(NoticePrev);
+                                var newPrevBtn = $('<button>').attr({'type': 'button', 'title': 'listNext'}).addClass('listNext').html('<span>next</span>').appendTo(control).click(NoticeNext);
+                            };
+                        } else {
+                            // 공지 없는 경우 작업해야함
+                        };
+                    };
+
+                    var cursor = 1;
+                    var NoticeNext = function() {
+                        $('div.noticeList ul li').fadeOut(150);
+                        if((cursor + 1) <= $('div.noticeList ul li').length) {
+                            cursor++;
+                            $('div.noticeList ul li:nth-child('+ cursor +')').fadeIn(150);
+                        } else {
+                            cursor = 1;
+                            $('div.noticeList ul li:nth-child('+ cursor +')').fadeIn(150);
+                        };
+                    };
+
+                    var NoticePrev = function() {
+                        $('div.noticeList ul li').fadeOut(150);
+                        if((cursor + 1) > $('div.noticeList ul li').length) {
+                            cursor--;
+                            $('div.noticeList ul li:nth-child('+ cursor +')').fadeIn(150);
+                        } else {
+                            cursor = $('div.noticeList ul li').length;
+                            $('div.noticeList ul li:nth-child('+ cursor +')').fadeIn(150);
+                        };
+                    };
+
+                    $(function() {
+                        NoticeInit();
+                        $('button.goTop').click(GotoTop);
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="noticeBox">
+            <div class="goTop">
+                <button type="button" class="goTop" title="상단 이동"><span>상단 이동</span></button>
+            </div>
+            <!-- <div class="innerNotice">
+                <div class="title">
+                    <span>Notice &amp; News</span>
+                </div>
+                <div class="noticeList">
+                    <ul><li><a href="/custom/notice/54" title="코디박 홈페이지가 리뉴얼 되었습니다." class="anchor"><span class="subject">코디박 홈페이지가 리뉴얼 되었습니다.</span></a></li></ul>
+                </div>
+            </div> -->
+        </div>
+        <div class="innerWrap">
+            <!-- <div class="policy">
+                <a href="/custom/policy" title="개인정보취급방침"><span>개인정보취급방침</span></a>
+            </div> -->
+            <div class="infor">
+                <div class="list">
+                    <div class="infoList">
+                        <!-- <div class="title">
+                            <span>본사 (Head Office)</span>
+                        </div> -->
+                        <div class="addr">
+                            <span class="addr">경북 경산시 진량읍 공단13로 183 (지번:진량읍 신제리 768)</span>
+                        </div>
+                        <div class="tel">
+                            <label>TEL : </label>
+                            <span class="tel">053-856-6611</span>
+                        </div>
+                        <div class="fax">
+                            <label>FAX : </label>
+                            <span class="fax">053-856-6612</span>
+                        </div>
+                        <div class="email">
+                            <label>E-Mail : </label>
+                            <span class="email">pjkodivac@korea.com</span>
+                        </div>
+                    </div>
+                    <div class="infoList sub">
+                        <div class="addr">
+                            <span class="addr">183, Gongdan 13-ro, Jillyang-eup, Gyeongsan-si, Gyeong buk, KOREA</span>
+                        </div>
+                        <div class="tel">
+                            <label>TEL : </label>
+                            <span class="tel">053-856-6611</span>
+                        </div>
+                        <div class="fax">
+                            <label>FAX : </label>
+                            <span class="fax">+82-53-856-6612</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="list"> </div> -->
+                <div class="copyright">
+                    <span class="copy">COPYRIGHT BY <a href="/_Master" target="_blank" title="_Master">KODIVAC.CO.LTD</a> ALL RIGHTS RESERVED.</span>
+                </div>
+            </div>
+            <div class="logo">
+                <a href="javascript:;" title="KODIVAC" style="background-image: url('/datas/config/202103/ujSx8HlXSr.png')"><span>KODIVAC</span></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,5130 @@
+@charset 'utf-8'; @import url('../fonts/font.notosans.css'); @import url('../fonts/font.scoredream.css'); @import url('../fonts/font.nanumgothic.css'); @import url('base.css'); @import url('board.css'); @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css); .ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+}
+
+.ellipsis2 {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+
+.ellipsis3 {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+
+.ellipsis4 {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+
+/* #header { background-color:#FFF; box-shadow:0 1px 3px #DDD; padding:1em; position:sticky; top:0; z-index:9; }
+#header::after { content:''; display: block; clear:both; } */
+#header {
+    height: 92px;
+    border-bottom: 1px solid #ececec;
+}
+
+#header div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#header div.innerWrap h1 {
+    display: block;
+    float: left;
+    padding: 22px 0;
+}
+
+#header div.innerWrap div.sideBtn {
+    display: none;
+}
+
+#sideNav {
+    display: none;
+}
+
+#gnb {
+    float: left;
+    padding-left: 60px;
+}
+
+#gnb ul.navi::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/*  */
+#gnb ul.navi.depth1 > li {
+    position: relative;
+}
+
+#gnb ul.navi.depth1 > li > a {
+    position: relative;
+}
+
+#gnb ul.navi.depth1 > li > a span {
+    position: relative;
+    display: block;
+    height: 100%;
+    text-align: center;
+    white-space: nowrap;
+    transition: .3s;
+}
+
+#gnb ul.navi.depth1 > li > a span.name {
+    height: 0;
+    transform: rotateX(-90deg);
+    opacity: 0;
+}
+
+#gnb ul.navi.depth1 > li > a span.subName {
+    height: 19px;
+}
+
+body:not(.padActive) #gnb ul.navi.depth1 > li:hover > a {
+}
+
+body:not(.padActive) #gnb ul.navi.depth1 > li:hover > a span.name {
+    transform: rotateX(0deg);
+    opacity: 1;
+    height: 19px;
+}
+
+body:not(.padActive) #gnb ul.navi.depth1 > li:hover > a span.subName {
+    transform: rotateX(90deg);
+    opacity: 0;
+    height: 0;
+}
+
+body.padActive #gnb ul.navi.depth1 > li > a.active {
+}
+
+/* #gnb ul.navi.depth1 > li:hover > a span.name { display: block; }
+#gnb ul.navi.depth1 > li:hover > a span.subName { display: none; } */
+#gnb ul.navi.depth1 > li+li ul.navi.depth2 > li > a span.name {
+    display: none;
+}
+
+#gnb ul.navi.depth1 > li+li ul.navi.depth2 > li > a span.subName {
+    display: inline;
+}
+
+#gnb ul.navi.depth1 > li+li ul.navi.depth2 > li > a:hover span.name {
+    display: inline;
+}
+
+#gnb ul.navi.depth1 > li+li ul.navi.depth2 > li > a:hover span.subName {
+    display: none;
+}
+
+#gnb ul.navi.depth2 > li > a span.name {
+    display: none;
+}
+
+#gnb ul.navi.depth2 > li > a span.subName {
+    display: inline;
+}
+
+#gnb ul.navi.depth2 > li > a:hover span.name {
+    display: inline;
+}
+
+#gnb ul.navi.depth2 > li > a:hover span.subName {
+    display: none;
+}
+
+#gnb ul.navi.depth1 > li:nth-child(2) ul.navi.depth2 > li > a span.name {
+    display: inline;
+}
+
+#gnb ul.navi.depth1 > li:nth-child(2) ul.navi.depth2 > li > a span.subName {
+    display: none;
+}
+
+#gnb ul.navi.depth1 > li:nth-child(2) ul.navi.depth2 > li > a:hover span.name {
+    display: none;
+}
+
+#gnb ul.navi.depth1 > li:nth-child(2) ul.navi.depth2 > li > a:hover span.subName {
+    display: inline;
+}
+
+#gnb ul.navi a {
+    display: block;
+}
+
+#gnb ul.navi a:hover {
+    text-decoration: underline;
+}
+
+#gnb ul.navi.depth1 > li {
+    float: left;
+    padding: 28px 30px;
+    z-index: 1000;
+}
+
+#gnb ul.navi.depth1 > li > a {
+    padding: 8px;
+    text-align: center;
+}
+
+#gnb ul.navi.depth1 div.child {
+    display: none;
+}
+
+#gnb ul.navi.depth1 div.child:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 1em;
+    height: 1em;
+    left: calc(50% - 0.5em);
+    top: -0.55em;
+    background: #fff;
+    border-left: 1px solid #000;
+    border-top: 1px solid #000;
+    z-index: 2;
+    transform: rotate(45deg);
+}
+
+#gnb ul.navi li div.child {
+    position: absolute;
+    display: block;
+    padding: 1em 0.5em;
+    left: 50%;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    border: 1px solid #000;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+#gnb ul.navi li div.child a {
+    padding: 0.3em 1em;
+    font-size: 14px;
+}
+
+#gnb ul.navi li div.child a:hover {
+    color: #1d2088;
+    font-weight: 600;
+}
+
+#header div.search {
+    float: right;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+#header div.search form {
+    position: relative;
+    border-bottom: 1px solid #bbb;
+}
+
+#header div.search form:before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: -100%;
+    width: 100%;
+    height: 1px;
+    background-color: #1d2088;
+    transition: all .3s ease-in-out;
+}
+
+#header div.search form.active:before {
+    left: 0;
+}
+
+#header div.search form input {
+    border: 0;
+    padding: 0.2em;
+}
+
+#header div.search form input:focus {
+    outline: none;
+}
+
+#header div.search form button {
+    width: 21px;
+    height: 21px;
+    background: url('../images/main/search.png') no-repeat center #fff;
+    border: 0;
+}
+
+#header div.search form.active button {
+    background: url('../images/main/searchActive.png') no-repeat center #fff;
+}
+
+#header div.search form button span {
+    display: none;
+}
+
+/* ë©”ì¸íŽ˜ì´ì§€ */
+#visual {
+    width: 100%;
+    height: 618px;
+    background: url('../img/main/backVisual.jpg') no-repeat center;
+    background-size: cover;
+}
+
+#visual div.visualArea {
+    position: relative;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+#visual div.visualArea ul.visual {
+    position: relative;
+    height: 100%;
+}
+
+#visual div.visualArea ul.visual li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+#visual div.visualArea ul.visual li div.txtBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#visual div.visualArea ul.visual li div.txtBox span {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 140%;
+}
+
+#visual div.visualArea ul.visual li div.txtBox span.subject {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+}
+
+#visual div.visualArea ul.visual li div.txtBox span.desc {
+    font-size: 12px;
+    width: 460px;
+}
+
+#visual div.visualArea ul.visual li a {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 435px;
+    bottom: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#visual div.visualArea div.control {
+    position: absolute;
+    width: 100%;
+    bottom: 15px;
+    text-align: center;
+    z-index: 100;
+}
+
+#visual div.visualArea div.control ul li {
+    display: inline-block;
+    margin: 0 3px;
+}
+
+#visual div.visualArea div.control ul li a {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: #6f6f6f;
+    border-radius: 10px;
+    transition: all .3s;
+}
+
+#visual div.visualArea div.control ul li a span {
+    display: none;
+}
+
+#visual div.visualArea div.control ul li.active a {
+    width: 35px;
+    background-color: #393939;
+}
+
+#visual div.visualArea div.shortcut div {
+    position: absolute;
+    z-index: 100;
+}
+
+#visual div.visualArea div.shortcut div.catalog {
+    bottom: 65px;
+    left: 0;
+}
+
+#visual div.visualArea div.shortcut div.manual {
+    bottom: 65px;
+    right: 0;
+}
+
+#visual div.visualArea div.shortcut a {
+    display: block;
+    position: relative;
+    width: 180px;
+    height: 160px;
+    background: #ececec;
+}
+
+#visual div.visualArea div.shortcut a::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-left: 1px solid #666;
+    border-top: 1px solid #666;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#visual div.visualArea div.shortcut a::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-right: 1px solid #666;
+    border-bottom: 1px solid #666;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#visual div.visualArea div.shortcut span.innerTxt {
+    display: block;
+    height: 100%;
+    padding: 103px 0 0 0;
+    background: url('../images/main/catalogImg.png') no-repeat 10px top;
+    text-align: center
+}
+
+#visual div.visualArea div.shortcut div.manual span.innerTxt {
+    background-image: url('../images/main/manualImg.png');
+}
+
+#visual div.visualArea div.shortcut span.innerTxt span {
+    display: block;
+    font-weight: 600;
+}
+
+#visual div.visualArea div.shortcut span.innerTxt span.title {
+    font-size: 1.5em;
+}
+
+/* kji */
+#visual .mainVisualImg {height: 100%;}
+#visual .mainVisualImg .img01 {
+    background: url(../img/main/main_img.png) no-repeat 0 170px;
+    width: 708px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#contents {
+}
+
+#footer {
+    background-color: #f8f9f7;
+}
+
+#footer div.noticeBox {
+    padding: 15px 0;
+    border-bottom: 1px solid #dcdcdc;
+    border-top: 1px solid #e7e7e8;
+    background-color: #fff;
+}
+
+#footer div.noticeBox div.innerNotice {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#footer div.noticeBox div.innerNotice:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#footer div.noticeBox div.innerNotice div.title {
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 45px;
+}
+
+#footer div.noticeBox div.innerNotice div.noticeList {
+    float: left;
+    width: calc(100% - 260px);
+}
+
+#footer div.noticeBox div.innerNotice div.noticeList ul {
+    position: relative;
+}
+
+#footer div.noticeBox div.innerNotice div.noticeList ul li {
+    position: absolute;
+    display: none;
+    width: 100%;
+    line-height: 150%;
+}
+
+#footer div.noticeBox div.innerNotice div.noticeList ul li:nth-child(1) {
+    display: block;
+}
+
+#footer div.noticeBox div.innerNotice div.noticeList ul li a {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#footer div.noticeBox div.innerNotice div.noticeList ul li a span {
+    font-size: 14px;
+}
+
+#footer div.noticeBox div.innerNotice div.noticeList ul li a:hover span {
+    text-decoration: underline;
+}
+
+#footer div.noticeBox div.innerNotice div.control {
+    float: right;
+}
+
+#footer div.noticeBox div.innerNotice div.control button {
+    width: 8px;
+    height: 11px;
+    margin: 0 2px;
+    border: 0;
+    padding: 0;
+}
+
+#footer div.noticeBox div.innerNotice div.control button.listPrev {
+    background: url('../images/main/leftArrow.png') no-repeat center;
+}
+
+#footer div.noticeBox div.innerNotice div.control button.listNext {
+    background: url('../images/main/rightArrow.png') no-repeat center;
+}
+
+#footer div.noticeBox div.innerNotice div.control button span {
+    display: none;
+}
+
+#footer div.noticeBox div.innerNotice div.goTop {
+    float: right;
+    margin-left: 10px;
+}
+
+#footer div.noticeBox div.innerNotice div.goTop button {
+    background: url('../images/main/ico.up.svg') no-repeat center #fff;
+    background-position: center;
+    width: 30px;
+    height: 20px;
+    border: 0;
+}
+
+#footer div.noticeBox div.innerNotice div.goTop button span {
+    display: none;
+}
+
+#footer div.innerWrap {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0 30px;
+}
+
+#footer div.innerWrap:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#footer div.innerWrap div.policy {
+    position: absolute;
+    right: 2px;
+    top: 130px;
+}
+
+#footer div.innerWrap div.policy a span {
+    padding: 4px 14px;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+    font-size: 14px;
+    color: #666;
+}
+
+#footer div.innerWrap div.policy a:hover span {
+    color: #333;
+}
+
+#footer div.innerWrap div.infor {
+    float: left;
+}
+
+#footer div.innerWrap div.infor div.list {
+    margin-bottom: 15px;
+}
+
+#footer div.innerWrap div.infor div.list:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#footer div.innerWrap div.infor div.list div.infoList {
+    margin-bottom: 5px;
+}
+
+#footer div.innerWrap div.infor div.list div.infoList:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#footer div.innerWrap div.infor div.list div.infoList > div {
+    float: left;
+    margin-right: 6px;
+}
+
+#footer div.innerWrap div.infor div.list > div * {
+    font-size: 13px;
+    color: #666;
+}
+
+#footer div.innerWrap div.infor div.list div.infoList div.title {
+    display: block;
+    float: none;
+    margin-bottom: 5px;
+}
+
+#footer div.innerWrap div.infor div.list div.infoList div.title span {
+    display: inline-block;
+    padding: 4px 9px;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+}
+
+#footer div.innerWrap div.infor div.list div.infoList.sub > div * {
+    font-size: 12px;
+    color: #999;
+}
+
+#footer div.innerWrap div.infor div.copyright {
+}
+
+#footer div.innerWrap div.infor div.copyright * {
+    font-size: 12px;
+    color: #bababa;
+}
+
+#footer div.innerWrap div.logo {
+    float: right;
+}
+
+#footer div.innerWrap div.logo a {
+    display: block;
+    width: 140px;
+    height: 75px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#footer div.innerWrap div.logo a span {
+    display: none;
+}
+
+/* ì„œë¸Œ ê³µí†µ */
+#subVisual {
+    width: 100%;
+    height: 244px;
+    background: url('../images/sub/subBackVisual.jpg') no-repeat center;
+    background-size: cover;
+}
+
+#subVisual div.innerWrap {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#subVisual div.innerWrap ul {
+    height: 100%;
+}
+
+#subVisual div.innerWrap ul li {
+    position: relative;
+    height: 100%;
+}
+
+#subVisual div.innerWrap ul li div.txtBox {
+    position: absolute;
+    left: 7%;
+    top: 90px;
+}
+
+#subVisual div.innerWrap ul li div.txtBox span {
+    display: block;
+}
+
+#subVisual div.innerWrap ul li div.txtBox span.title {
+    margin-bottom: 5px;
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+}
+
+#subVisual div.innerWrap ul li div.txtBox span.desc {
+    width: 525px;
+    color: #8f8f8f;
+}
+
+#subVisual div.innerWrap ul li span.thumb {
+    position: absolute;
+    display: block;
+    width: 360px;
+    height: 220px;
+    top: 24px;
+    right: 12%;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;
+}
+
+#snb {
+    border-bottom: 1px solid #ececec;
+}
+
+#snb div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#snb div.innerWrap:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#snb div.innerWrap div.home {
+    float: left;
+}
+
+#snb div.innerWrap div.home a {
+    display: block;
+    width: 50px;
+    height: 49px;
+    background: url('../images/sub/home.svg') no-repeat center #315FC4;
+    background-size: 50%;
+}
+
+#snb div.innerWrap div.home a span {
+    display: none;
+}
+
+#snb div.innerWrap div.snbList {
+    position: relative;
+    float: left;
+}
+
+#snb div.innerWrap div.snbList div.snbTitle {
+    width: 250px;
+    border-right: 1px solid #ececec;
+}
+
+#snb div.innerWrap div.snbList div.snbTitle a {
+    position: relative;
+    display: block;
+    padding: 15px 30px 15px 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#snb div.innerWrap div.snbList div.snbTitle a:hover {
+}
+
+#snb div.innerWrap div.snbList div.snbTitle a:before {
+    content: '';
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    border: 1px solid #e5e5e5;
+    background: url('../images/sub/snbArrow.svg') no-repeat center;
+    top: 15px;
+    right: 10px;
+    background-size: 50%;
+}
+
+body:not(.padActive) #snb div.innerWrap div.snbList div.snbTitle a:hover:before {
+    border: 1px solid #3172c4;
+    background: url('../images/sub/snbArrowActive.svg') no-repeat center;
+    background-size: 50%;
+}
+
+body.padActive #snb div.innerWrap div.snbList div.snbTitle a.selected:before {
+    border: 1px solid #3172c4;
+    background: url('../images/sub/snbArrowActive.svg') no-repeat center;
+    background-size: 50%;
+}
+
+#snb div.innerWrap div.snbList div.depthList {
+    display: none;
+    position: absolute;
+    width: 100%;
+    border: 1px solid #ececec;
+    border-top: 0;
+    margin-top: 1px;
+    z-index: 100;
+}
+
+#snb div.innerWrap div.snbList div.depthList ul li {
+    border-bottom: 1px solid #ececec;
+    background-color: #fff;
+}
+
+#snb div.innerWrap div.snbList div.depthList ul li:last-child {
+    border-bottom: 0;
+}
+
+#snb div.innerWrap div.snbList div.depthList ul li a {
+    display: block;
+    padding: 10px 10px;
+    background-color: #fff;
+}
+
+#snb div.innerWrap div.snbList div.depthList ul li a span {
+    font-size: 14px;
+}
+
+#snb div.innerWrap div.snbList div.depthList ul li a.selected {
+    background-color: #315FC4;
+}
+
+#snb div.innerWrap div.snbList div.depthList ul li a.selected span {
+    color: #fff;
+}
+
+#snb div.innerWrap div.snbList+div.snbList div.depthList {
+    margin-left: -1px;
+}
+
+#snb div.innerWrap div.searchResult {
+    float: left;
+    width: calc(100% - 50px);
+    padding: 0 10px;
+    border-right: 1px solid #ececec;
+    line-height: 50px;
+}
+
+div.mobileDep3 {
+    display: none;
+}
+
+#container.sub {
+    padding: 40px 0 80px;
+}
+
+#container.sub div.content {
+    padding-top: 70px;
+}
+
+#container div.pageTitle {
+}
+
+#container div.pageTitle div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+#container div.pageTitle div.innerWrap:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#container div.pageTitle div.innerWrap div.title {
+    float: left;
+    padding-bottom: 20px;
+}
+
+#container div.pageTitle div.innerWrap div.title span {
+    display: block;
+    font-weight: 600;
+}
+
+#container div.pageTitle div.innerWrap div.title span.sTitle {
+    font-size: 18px;
+    color: #666;
+}
+
+#container div.pageTitle div.innerWrap div.title span.mTitle {
+    font-size: 48px;
+    letter-spacing: -0.01em;
+}
+
+#container div.pageTitle div.innerWrap div.common {
+    float: right;
+    padding-top: 35px;
+}
+
+#container div.pageTitle div.innerWrap div.common span {
+    color: #5d7cbc;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: 'S-Core';
+    font-weight: 400;
+}
+
+#container div.pageTitle div.innerWrap div.common span.sec {
+    position: relative;
+    padding-top: 10px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+#container div.pageTitle div.innerWrap div.common span.sec:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    left: 0;
+    top: 0;
+    background: url('../images/sub/sec.png') repeat 5px top;
+}
+
+div.greet div.imageBox {
+    position: absolute;
+    display: block;
+    width: 100%;
+}
+
+div.greet div.imageBox span.back {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: #e5e5e5;
+    text-indent: -9999px;
+}
+
+div.greet div.imageBox div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+div.greet div.imageBox div.innerWrap span.thumb {
+    position: relative;
+    display: block;
+    float: left;
+    padding: 7px 7px 7px 60px;
+    background-color: #e5e5e5;
+}
+
+div.greet div.imageBox1 {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+div.greet div.imageBox1 span.back {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: #e5e5e5;
+    text-indent: -9999px;
+}
+
+div.greet div.imageBox1 div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+div.greet div.imageBox1 div.innerWrap span.thumb {
+    position: relative;
+    display: block;
+    float: left;
+    padding: 7px 7px 7px 60px;
+    background-color: #e5e5e5;
+}
+
+div.greet div.imageBox1 div.innerWrap span.thumb1 {
+    position: relative;
+    display: block;
+    padding: 10px;
+    background-color: #e5e5e5;
+}
+
+div.greet div.imageBox1 div.innerWrap span.thumb1 img {
+    display: block;
+}
+
+#greeting {
+}
+
+#greeting div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#greeting div.innerWrap div.txtBox {
+    padding-left: 370px;
+    margin-bottom: 60px;
+}
+
+#greeting div.innerWrap div.txtBox div.greet {
+    margin-bottom: 25px;
+    padding-left: 18px;
+}
+
+#greeting div.innerWrap div.txtBox div.greet span {
+    display: block;
+    line-height: 150%;
+}
+
+#greeting div.innerWrap div.txtBox div.imp {
+    padding: 15px 10px;
+    margin-bottom: 35px;
+    text-align: center;
+    font-size: 24px;
+    background-color: #5d7cbc;
+    color: #fff;
+    line-height: 150%;
+    word-break: keep-all;
+}
+
+#greeting div.innerWrap div.txtBox p {
+    line-height: 160%;
+    margin-bottom: 30px;
+    padding-left: 18px;
+}
+
+#greeting div.innerWrap div.txtBox span.hello {
+    display: block;
+    text-align: right;
+}
+
+#greeting div.innerWrap div.engBox {
+    margin-left: 370px;
+    background-color: #f2f2f2;
+    padding: 20px 10px;
+    border-radius: 8px;
+}
+
+#greeting div.innerWrap div.engBox p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 150%;
+    padding-left: 10px;
+    letter-spacing: -0.01em;
+}
+
+#greeting div.innerWrap div.engBox p:last-child {
+    margin-bottom: 0;
+}
+
+#greeting div.innerWrap div.engBox span.engTitle {
+    display: block;
+    padding: 15px 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #5d7cbc;
+}
+
+#greeting div.innerWrap div.txtBox1 {
+    float: none;
+    margin-bottom: 60px;
+}
+
+#greeting div.innerWrap div.txtBox1 div.greet {
+    margin: 25px 0 ;
+    padding-left: 18px;
+}
+
+#greeting div.innerWrap div.txtBox1 div.greet span {
+    display: block;
+    line-height: 150%;
+}
+
+#greeting div.innerWrap div.txtBox1 div.imp {
+    padding: 15px 10px;
+    margin-bottom: 35px;
+    text-align: center;
+    font-size: 24px;
+    background-color: #5d7cbc;
+    color: #fff;
+    line-height: 150%;
+    word-break: keep-all;
+}
+
+#greeting div.innerWrap div.txtBox1 p {
+    line-height: 160%;
+    margin-bottom: 30px;
+    padding-left: 18px;
+}
+
+#greeting div.innerWrap div.txtBox1 span.hello {
+    display: block;
+    text-align: right;
+}
+
+#greeting div.innerWrap div.engBox1 {
+    background-color: #f2f2f2;
+    padding: 20px 10px;
+    border-radius: 8px;
+}
+
+#greeting div.innerWrap div.engBox1 p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 150%;
+    padding-left: 10px;
+    letter-spacing: -0.01em;
+}
+
+#greeting div.innerWrap div.engBox1 p:last-child {
+    margin-bottom: 0;
+}
+
+#greeting div.innerWrap div.engBox1 span.engTitle {
+    display: block;
+    padding: 15px 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #5d7cbc;
+}
+
+#history {
+}
+
+#history div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#history div.innerWrap div.title {
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 10px;
+}
+
+#history div.innerWrap div.title:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#history div.innerWrap div.title span {
+    display: block;
+    float: left;
+    text-align: center;
+    color: #3631c4;
+    font-weight: 600;
+}
+
+#history div.innerWrap div.title span.year {
+    width: 160px;
+    margin-right: 25px;
+}
+
+#history div.innerWrap div.title span.month {
+    width: 55px;
+}
+
+#history div.innerWrap div.title span.contents {
+    width: calc(100% - 240px);
+}
+
+#history div.innerWrap ul li {
+    position: relative;
+}
+
+#history div.innerWrap ul li:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#history div.innerWrap ul li.year {
+    margin-top: 20px;
+}
+
+#history div.innerWrap ul li span.year {
+    display: block;
+    float: left;
+    width: 160px;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    background-color: #5d7cbc;
+    border-radius: 10px;
+    font-weight: 600;
+    left: 0;
+    top: 0;
+}
+
+#history div.innerWrap ul li span.month {
+    display: block;
+    position: absolute;
+    width: 55px;
+    left: 185px;
+    padding: 7px 0;
+    text-align: center;
+    color: #fff;
+    background-color: #2088af;
+    border-radius: 5px;
+}
+
+#history div.innerWrap ul li span.month.count2,#history div.innerWrap ul li span.month.count4, #history div.innerWrap ul li span.month.count6 {
+    background-color: #79b85d;
+}
+
+#history div.innerWrap ul li div.item {
+    padding-left: 260px;
+    margin-bottom: 10px;
+}
+
+#history div.innerWrap ul li div.item.option {
+    padding-left: 185px;
+}
+
+#history div.innerWrap ul li div.item span {
+    display: block;
+    line-height: 140%;
+    word-break: keep-all;
+}
+
+#history div.innerWrap ul li div.item span.content {
+    font-size: 15px;
+}
+
+#history div.innerWrap ul li div.item span.engCont {
+    font-size: 13px;
+    color: #666;
+}
+
+#history div.innerWrap ul li span.option {
+    display: block;
+    width: 150px;
+    margin: 0 0 10px 185px;
+    padding: 9px 0;
+    border-radius: 5px;
+    font-size: 15px;
+    color: #fff;
+    background-color: #2088af;
+    text-align: center;
+}
+
+#history div.innerWrap ul li span.option.count2 {
+    background-color: #79b85d;
+}
+
+#group {
+}
+
+#group div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#group div.innerWrap div.mobile {
+    display: none;
+}
+
+#vision {
+}
+
+#vision div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#vision div.innerWrap:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#vision div.innerWrap div.float:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#vision div.innerWrap div.txtArea {
+    float: left;
+    width: 540px;
+    margin-right: 10px;
+    padding: 0 40px;
+    margin-top: 107px;
+}
+
+#vision div.innerWrap div.txtArea div.item {
+    margin-bottom: 10px;
+}
+
+#vision div.innerWrap div.txtArea div.item:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#vision div.innerWrap div.txtArea div.item div.title {
+    padding: 5px 0;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+}
+
+#vision div.innerWrap div.txtArea div.item div.title span {
+    display: block;
+    font-weight: 600;
+}
+
+#vision div.innerWrap div.txtArea div.item div.title span.mTitle {
+}
+
+#vision div.innerWrap div.txtArea div.item div.title span.sTitle {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+}
+
+#vision div.innerWrap div.txtArea div.item.global div.title {
+    background-color: #da9e30;
+}
+
+#vision div.innerWrap div.txtArea div.item.semi div.title {
+    background-color: #5d7cbc;
+}
+
+#vision div.innerWrap div.txtArea div.item.total div.title {
+    background-color: #2088af;
+}
+
+#vision div.innerWrap div.txtArea div.item.vac div.title {
+    background-color: #79b85d;
+}
+
+#vision div.innerWrap div.txtArea div.item div.list {
+    padding: 0 5px;
+}
+
+#vision div.innerWrap div.txtArea div.item div.list ul {
+    display: block;
+    float: left;
+    width: 50%;
+}
+
+#vision div.innerWrap div.txtArea div.item div.list ul li {
+    position: relative;
+    padding: 0 10px;
+    line-height: 150%;
+    word-break: keep-all;
+}
+
+#vision div.innerWrap div.txtArea div.item div.list ul.kor li {
+    font-size: 14px;
+}
+
+#vision div.innerWrap div.txtArea div.item div.list ul.eng li {
+    font-size: 12px;
+    color: #666;
+}
+
+#vision div.innerWrap div.txtArea div.item div.list ul li:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 5px;
+    height: 1px;
+    background-color: #333;
+}
+
+#vision div.innerWrap div.imgArea {
+    float: right;
+    width: calc(100% - 550px);
+}
+
+#vision div.innerWrap div.desc {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#vision div.innerWrap div.desc > span {
+    padding: 8px 85px;
+    border: 1px solid #3a739e;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#vision div.innerWrap div.desc > span span.corp {
+    color: #2a8a00;
+}
+
+#agency {
+}
+
+#agency div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#agency div.innerWrap div.item {
+    margin-bottom: 30px;
+}
+
+#agency div.innerWrap div.item:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#agency div.innerWrap div.item div.corp {
+    float: left;
+    width: 185px;
+    padding: 15px 0;
+    text-align: center;
+    background-color: #2088af;
+    border-radius: 5px;
+}
+
+#agency div.innerWrap div.item:nth-child(2n) div.corp {
+    background-color: #79b85d;
+}
+
+#agency div.innerWrap div.item div.corp.solo {
+    padding: 24px 0;
+}
+
+#agency div.innerWrap div.item div.corp span {
+    display: block;
+    color: #fff;
+}
+
+#agency div.innerWrap div.item div.corp span.name {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+#agency div.innerWrap div.item div.corp.solo span.name {
+    margin-bottom: 0;
+}
+
+#agency div.innerWrap div.item div.corp span.subName {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+}
+
+#agency div.innerWrap div.item div.info {
+    float: left;
+    margin-left: 20px;
+    margin-top: 2px;
+}
+
+#agency div.innerWrap div.item div.info > span {
+    display: block;
+}
+
+#agency div.innerWrap div.item div.info span {
+    font-size: 14px;
+    line-height: 150%;
+}
+
+#agency div.innerWrap div.item div.info span.addrSub {
+    font-size: 12px;
+    color: #999;
+}
+
+#location {
+}
+
+#location div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#location div.innerWrap div.item {
+    margin-top: 45px;
+}
+
+#location div.innerWrap div.item:first-child {
+    margin-top: 0;
+}
+
+#location div.innerWrap div.item div.mapBox {
+    padding: 25px;
+    border: 1px solid #ececec;
+}
+
+#location div.innerWrap div.item div.office {
+    margin-bottom: 20px;
+}
+
+#location div.innerWrap div.item div.office:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#location div.innerWrap div.item div.office span.title {
+    display: block;
+    float: left;
+    width: 185px;
+    padding: 15px 0;
+    margin-right: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+#location div.innerWrap div.item div.office span.title span.sub {
+    display: block;
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+#location div.innerWrap div.item div.office.head span.title {
+    background-color: #2088af;
+}
+
+#location div.innerWrap div.item div.office div.info {
+    float: left;
+    width: calc(100% - 205px);
+}
+
+#location div.innerWrap div.item div.office div.info ul {
+    margin-top: 2px;
+}
+
+#location div.innerWrap div.item div.office div.info ul:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#location div.innerWrap div.item div.office div.info ul li {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+#location div.innerWrap div.item div.office div.info ul li.tel, #location div.innerWrap div.item div.office div.info ul li.fax {
+    display: inline-block;
+}
+
+#location div.innerWrap div.item div.office div.info ul li.addrSub {
+    color: #666;
+    font-size: 13px;
+}
+
+#policy {
+}
+
+#policy div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#policy div.innerWrap h2 {
+    padding: 30px 0;
+    text-align: center;
+    font-family: 'S-Core';
+    font-weight: 400;
+    font-size: 24px;
+    color: #31479b;
+}
+
+#policy div.innerWrap p {
+    line-height: 160%;
+    word-break: keep-all;
+}
+
+#policy div.innerWrap ul {
+    margin: 10px 0;
+}
+
+#policy div.innerWrap ul li {
+    position: relative;
+    line-height: 150%;
+    padding-left: 10px;
+}
+
+#policy div.innerWrap ul li:before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #333;
+    left: 2px;
+    top: 9px;
+}
+
+/* ì œí’ˆ */
+#product {
+}
+
+#product div.category {
+    margin-top: 30px;
+}
+
+#product div.category div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+#product div.category div.innerWrap ul:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#product div.category div.innerWrap ul li {
+    float: left;
+    margin-left: 10px;
+}
+
+#product div.category div.innerWrap ul li:first-child {
+    margin-left: 0;
+}
+
+#product div.category div.innerWrap ul li a {
+    display: table;
+    width: 185px;
+    height: 60px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    transition: all .2s ease-in-out;
+}
+
+#product div.category div.innerWrap ul li a:not(.selected):hover {
+    border: 1px solid #5d7cbc;
+}
+
+#product div.category div.innerWrap ul li a.selected {
+    background-color: #5d7cbc;
+    color: #fff;
+}
+
+#product div.category div.innerWrap ul li a span {
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 140%;
+}
+
+#product div.list {
+    margin-top: 20px;
+}
+
+#product div.list div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#product div.list div.innerWrap ul:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#product div.list div.innerWrap ul li {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+    margin-bottom: 70px;
+}
+
+#product div.list div.innerWrap ul li div.box {
+}
+
+#product div.list div.innerWrap ul li div.box a {
+}
+
+#product div.list div.innerWrap ul li div.box a.thumb {
+    display: block;
+    height: 100%;
+    padding: 10px;
+    border: 1px solid #ececec;
+    transition: all .2s ease-in-out;
+}
+
+#product div.list div.innerWrap ul li div.box a.thumb span.thumb {
+    display: block;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#product div.list div.innerWrap ul li div.box a.thumb span.thumb img {
+    display: none;
+}
+
+#product div.list div.innerWrap ul li div.box a.thumb:hover {
+    border: 1px solid #315FC4;
+}
+
+/* #product div.list div.innerWrap ul li div.box a:hover span.name { text-decoration: underline; } */
+#product div.list div.innerWrap ul li div.box a span.name {
+    display: block;
+    text-align: center;
+    /* kji
+    margin-top: 10px; */
+    font-weight: 600;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#product div.list div.innerWrap ul li.empty {
+    float: none;
+    width: 100%;
+    padding: 30px 0;
+    text-align: center;
+    color: #999;
+}
+
+#product div.detail {
+    margin-top: 50px;
+}
+
+#product div.detail div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#product div.detail div.innerWrap div.title {
+    clear: both;
+    margin-bottom: 35px;
+    text-align: center;
+    font-size: 48px;
+}
+
+#product div.detail div.innerWrap div.image {
+    position: relative;
+    height: 500px;
+    margin-bottom: 60px;
+    border: 1px solid #ececec;
+}
+
+#product div.detail div.innerWrap div.image div.imageBox {
+    position: relative;
+    height: 100%;
+    padding: 20px 60px;
+    overflow: hidden;
+}
+
+#product div.detail div.innerWrap div.image div.imageBox span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#product div.detail div.innerWrap div.image div.imageBox span img {
+    display: none;
+}
+
+#product div.detail div.innerWrap div.image div.control {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#product div.detail div.innerWrap div.image div.control button {
+    width: 60px;
+    height: 80px;
+    border: 0;
+}
+
+#product div.detail div.innerWrap div.image div.control button.imagePrev {
+    float: left;
+    background: url('../images/sub/prodImagePrev.png') no-repeat center;
+}
+
+#product div.detail div.innerWrap div.image div.control button.imageNext {
+    float: right;
+    background: url('../images/sub/prodImageNext.png') no-repeat center;
+}
+
+#product div.detail div.innerWrap div.image div.control button span {
+    display: none;
+}
+
+#product div.detail div.innerWrap div.item {
+}
+
+#product div.detail div.innerWrap div.item div.itemList {
+    margin-bottom: 60px;
+}
+
+#product div.detail div.innerWrap div.item div.itemList div.itemTitle {
+}
+
+#product div.detail div.innerWrap div.item div.itemList div.itemTitle span {
+    display: block;
+    margin-bottom: 10px;
+    padding-left: 35px;
+    font-size: 24px;
+    font-weight: 600;
+    background: url('../images/sub/prodContList.png') no-repeat left center;
+}
+
+#product div.detail div.innerWrap div.item div.itemList div.value {
+    border: 1px solid #ececec;
+    padding: 20px;
+    text-align: center;
+}
+
+#product div.detail div.innerWrap div.item div.itemList div.value::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#product div.detail div.innerWrap div.item div.itemList div.value img {
+    width: auto !important;
+    height: auto !important;
+}
+
+#product div.detail div.innerWrap div.item div.itemList div.value table {
+    width: 100%;
+    border: 1px solid #ececec;
+    border-collapse: collapse;
+}
+
+#product div.detail div.innerWrap div.item div.itemList div.value table thead tr th {
+    padding: 12px 0;
+    font-weight: 600;
+    border-left: 1px solid #ececec;
+    background-color: #5d7cbc;
+    color: #fff;
+}
+
+#product div.detail div.innerWrap div.item div.itemList div.value table tbody tr td {
+    padding: 12px 0;
+    border-bottom: 1px solid #ececec;
+    border-left: 1px solid #ececec;
+}
+
+#product div.detail div.innerWrap div.item div.itemList div.value table tbody tr td.title {
+    background-color: #fafafa;
+}
+
+#product div.detail div.innerWrap div.item div.itemList div.value div.kor ul li, #product div.detail div.innerWrap div.item div.itemList div.value div.eng ul li {
+    position: relative;
+    text-align: left;
+    font-size: 14px;
+    line-height: 150%;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+#product div.detail div.innerWrap div.item div.itemList div.value div.kor ul li:before, #product div.detail div.innerWrap div.item div.itemList div.value div.eng ul li:before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    top: 9px;
+    left: 0;
+    background-color: #333;
+}
+
+#product div.detail div.innerWrap div.item div.itemList div.value div.kor {
+    margin-bottom: 50px;
+}
+
+#product div.detail div.innerWrap div.item div.itemList div.value div.eng ul li {
+    color: #999;
+}
+
+#product div.detail div.innerWrap div.item div.itemList div.value div.eng ul li:before {
+    background-color: #999;
+}
+
+#product div.detail div.innerWrap div.control {
+    text-align: center;
+}
+
+#product div.detail div.innerWrap div.control a {
+    display: inline-block;
+    padding: 18px 60px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: #5d7cbc;
+    color: #fff;
+}
+
+/* BOARD */
+#machine.list {
+    padding-top: 30px;
+}
+
+#machine.list div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#machine.list div.innerWrap div.board:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#machine.list div.innerWrap div.item {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 10px;
+}
+
+#machine.list div.innerWrap div.item div.inner {
+    width: calc(100% - 10px);
+    margin: 0 auto;
+    border: 1px solid #ececec;
+    padding: 18px 10px;
+}
+
+#machine.list div.innerWrap div.item div.inner:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#machine.list div.innerWrap div.item div.inner div.thumb {
+    float: left;
+    width: 100px;
+    height: 70px;
+    border: 1px solid #ececec;
+}
+
+#machine.list div.innerWrap div.item div.inner div.thumb a {
+    display: block;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+#machine.list div.innerWrap div.item div.inner div.thumb a span {
+    display: none;
+}
+
+#machine.list div.innerWrap div.item div.inner div.thumb a img {
+    display: none;
+}
+
+#machine.list div.innerWrap div.item div.inner div.info {
+    float: left;
+    width: calc(100% - 110px);
+    margin-left: 10px;
+}
+
+#machine.list div.innerWrap div.item div.inner div.info span.title {
+    display: block;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#machine.list div.innerWrap div.item div.inner div.info span.contents {
+    font-size: 14px;
+    color: #3631c4;
+}
+
+#machine.list div.innerWrap div.item div.inner div.info span.contents p {
+    position: relative;
+    padding-left: 8px;
+    line-height: 140%;
+}
+
+#machine.list div.innerWrap div.item div.inner div.info span.contents p:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 3px;
+    height: 3px;
+    background-color: #3631c4;
+}
+
+#notice.list {
+    padding-top: 30px;
+}
+
+#notice.list div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#notice.list div.innerWrap div.title {
+}
+
+#notice.list div.innerWrap div.title:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#notice.list div.innerWrap div.title span {
+    display: block;
+    float: left;
+    padding: 14px 0;
+    border: 1px solid #ececec;
+    border-right: 0;
+    text-align: center;
+    background-color: #5d7cbc;
+    color: #fff;
+}
+
+#notice.list div.innerWrap div.title span.num {
+    width: 10%;
+    border-left: 0;
+}
+
+#notice.list div.innerWrap div.title span.subject {
+    width: calc(100% - 25%);
+}
+
+#notice.list div.innerWrap div.title span.date {
+    width: 15%;
+}
+
+#notice.list div.innerWrap div.board {
+}
+
+#notice.list div.innerWrap div.board ul li {
+    border-bottom: 1px solid #ececec;
+}
+
+#notice.list div.innerWrap div.board ul li a:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#notice.list div.innerWrap div.board ul li a span {
+    display: block;
+    float: left;
+    text-align: center;
+    padding: 10px;
+    color: #888;
+    border-left: 1px solid #ececec;
+}
+
+#notice.list div.innerWrap div.board ul li a span.num {
+    width: 10%;
+    border-left: 0;
+}
+
+#notice.list div.innerWrap div.board ul li a span.subject {
+    width: calc(100% - 25%);
+    text-align: left;
+}
+
+#notice.list div.innerWrap div.board ul li a span.subject:hover {
+    text-decoration: underline;
+}
+
+#notice.list div.innerWrap div.board ul li a span.date {
+    width: 15%;
+}
+
+#notice.list div.innerWrap div.board div.empty {
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid #ececec;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+}
+
+#notice.detail {
+    padding-top: 30px;
+}
+
+#notice.detail div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#notice.detail div.innerWrap div.title {
+    padding: 13px 10px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    border: 1px solid #e5e5e5;
+    background-color: #5d7cbc;
+}
+
+#notice.detail div.innerWrap div.info {
+    border: 1px solid #e5e5e5;
+    border-top: 0;
+}
+
+#notice.detail div.innerWrap div.info:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#notice.detail div.innerWrap div.info div.file {
+    float: left;
+}
+
+#notice.detail div.innerWrap div.info div.file a {
+    display: block;
+    float: left;
+    padding-left: 15px;
+    margin-right: 15px;
+    background: url('../images/sub/ico.clip.svg') no-repeat left center / auto 1em;
+}
+
+#notice.detail div.innerWrap div.info div.file a:hover span {
+    text-decoration: underline;
+}
+
+#notice.detail div.innerWrap div.info div.date {
+    float: right;
+    border-left: 1px solid #e5e5e5;
+}
+
+#notice.detail div.innerWrap div.info div:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#notice.detail div.innerWrap div.info div span.title {
+    display: block;
+    float: left;
+    padding: 12px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    border-right: 1px solid #e5e5e5;
+}
+
+#notice.detail div.innerWrap div.info div span.value {
+    display: block;
+    float: left;
+    padding: 12px 10px;
+    font-size: 14px;
+}
+
+#notice.detail div.innerWrap div.contents {
+    padding: 35px 25px;
+    margin-bottom: 50px;
+    border: 1px solid #e5e5e5;
+    border-top: 0;
+    line-height: 150%;
+}
+
+#notice.detail div.innerWrap div.contents div.img {
+    text-align: center;
+}
+
+#notice.detail div.innerWrap div.contents div.img+div.img {
+    margin-top: 20px;
+}
+
+#notice.detail div.innerWrap div.control {
+    text-align: center;
+}
+
+#notice.detail div.innerWrap div.control button {
+    padding: 18px 60px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #5d7cbc;
+    color: #fff;
+    font-size: 18px;
+}
+
+#customer.list {
+    padding-top: 30px;
+}
+
+#customer.list div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#customer.list div.innerWrap div.title {
+}
+
+#customer.list div.innerWrap div.title:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#customer.list div.innerWrap div.title span {
+    display: block;
+    float: left;
+    padding: 10px 0;
+    border: 1px solid #ececec;
+    border-right: 0;
+    text-align: center;
+    background-color: #5d7cbc;
+    color: #fff;
+}
+
+#customer.list div.innerWrap div.title span.num {
+    width: 10%;
+    border-left: 0;
+}
+
+#customer.list div.innerWrap div.title span.subject {
+    width: calc(100% - 35%);
+}
+
+#customer.list div.innerWrap div.title span.writer {
+    width: 10%;
+}
+
+#customer.list div.innerWrap div.title span.date {
+    width: 15%;
+}
+
+#customer.list div.innerWrap div.board {
+}
+
+#customer.list div.innerWrap div.board ul li {
+    border-bottom: 1px solid #ececec;
+}
+
+#customer.list div.innerWrap div.board ul li a:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#customer.list div.innerWrap div.board ul li a span {
+    display: block;
+    float: left;
+    text-align: center;
+    padding: 10px;
+    color: #888;
+    border-left: 1px solid #ececec;
+}
+
+#customer.list div.innerWrap div.board ul li a span.secret {
+    display: inline;
+    float: left;
+    margin-right: 3px;
+    padding: 2px 5px;
+    border-left: 0;
+    border-radius: 3px;
+    font-size: 12px;
+    background-color: #5d7cbc;
+    color: #fff;
+}
+
+#customer.list div.innerWrap div.board ul li a span.num {
+    width: 10%;
+    border-left: 0;
+}
+
+#customer.list div.innerWrap div.board ul li a span.subject {
+    width: calc(100% - 35%);
+    text-align: left;
+}
+
+#customer.list div.innerWrap div.board ul li a span.writer {
+    width: 10%;
+}
+
+#customer.list div.innerWrap div.board ul li a span.date {
+    width: 15%;
+}
+
+#customer.list div.innerWrap div.board div.empty {
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid #ececec;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+}
+
+#customer.list div.innerWrap div.control {
+    margin-top: 20px;
+    text-align: right;
+}
+
+#customer.list div.innerWrap div.control a {
+    display: inline-block;
+    padding: 18px 45px;
+    color: #fff;
+    background-color: #2088af;
+    border-radius: 4px;
+    border: 0;
+}
+
+/* ë¹„ë°€ë²ˆí˜¸ */
+div.ui-dialog.ui-widget-content {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+div.ui-dialog.ui-widget-content div.ui-dialog-titlebar.ui-widget-header {
+    padding-bottom: 5px;
+    line-height: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+div.ui-dialog.ui-widget-content button.ui-dialog-titlebar-close {
+    float: right;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+    background: url('/resource/images/mobile/navClose_333333.svg') no-repeat center / 50%;
+}
+
+div.ui-dialog.ui-widget-content button.ui-dialog-titlebar-close span {
+    display: none;
+}
+
+div#dev932Pop {
+    font-size: 100%;
+    font-family: 'Roboto',Arial,'Nanum Gothic',NanumGothic,'ë‚˜ëˆ”ê³ ë”•',Dotum;
+}
+
+div#dev932Pop span.description {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+div#dev932Pop label {
+    font-size: 14px;
+    display: inline-block;
+    width: 60px;
+    line-height: 30px;
+}
+
+div#dev932Pop input {
+    width: 250px;
+    display: block;
+    margin: 0 auto;
+}
+
+div#dev932Pop div.confirmControl {
+    text-align: right;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+div#dev932Pop button {
+    padding: .4em 1em;
+    font-size: 14px;
+}
+
+div#dev932Pop div.confirm {
+}
+
+div#dev932Pop div.confirm span.description {
+    display: block;
+    margin-bottom: 10px;
+}
+
+div#dev932Pop div.confirm label {
+    font-size: 14px;
+    color: #999;
+}
+
+div#dev932Pop div.confirm input.password {
+    margin-top: 5px;
+}
+
+div#dev932Pop div.confirmControl {
+    margin-top: 10px;
+    text-align: center;
+}
+
+div#dev932Pop div.confirmControl button {
+    padding: .4em 1em;
+}
+
+div#dev932Pop div.confirmControl button span {
+    font-weight: normal;
+    font-size: 16px;
+}
+
+div#dev932Pop div.confirmControl button:hover span {
+}
+
+#customer.detail {
+    padding-top: 30px;
+}
+
+#customer.detail div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#customer.detail div.innerWrap div.title {
+    padding: 13px 10px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    border: 1px solid #e5e5e5;
+    background-color: #5d7cbc;
+}
+
+#customer.detail div.innerWrap div.info {
+    border: 1px solid #e5e5e5;
+    border-top: 0;
+}
+
+#customer.detail div.innerWrap div.info:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#customer.detail div.innerWrap div.info div.name {
+    float: left;
+    border-right: 1px solid #e5e5e5;
+}
+
+#customer.detail div.innerWrap div.info div.name span.value {
+    min-width: 100px;
+}
+
+#customer.detail div.innerWrap div.info div.file {
+    float: left;
+}
+
+#customer.detail div.innerWrap div.info div.file a {
+    display: block;
+    float: left;
+    padding-left: 15px;
+    margin-right: 15px;
+    background: url('../images/sub/ico.clip.svg') no-repeat left center / auto 1em;
+}
+
+#customer.detail div.innerWrap div.info div.file a:hover span {
+    text-decoration: underline;
+}
+
+#customer.detail div.innerWrap div.info div.date {
+    float: right;
+    border-left: 1px solid #e5e5e5;
+}
+
+#customer.detail div.innerWrap div.info div:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#customer.detail div.innerWrap div.info div span.title {
+    display: block;
+    float: left;
+    padding: 12px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    border-right: 1px solid #e5e5e5;
+}
+
+#customer.detail div.innerWrap div.info div span.value {
+    display: block;
+    float: left;
+    padding: 12px 10px;
+    font-size: 14px;
+}
+
+#customer.detail div.innerWrap div.contents {
+    padding: 35px 25px;
+    margin-bottom: 40px;
+    border: 1px solid #e5e5e5;
+    border-top: 0;
+    line-height: 150%;
+}
+
+#customer.detail div.innerWrap div.contents div.img {
+    text-align: center;
+}
+
+#customer.detail div.innerWrap div.contents div.img+div.img {
+    margin-top: 20px;
+}
+
+#customer.detail div.innerWrap div.comment {
+}
+
+#customer.detail div.innerWrap div.comment iframe {
+    width: 100%;
+}
+
+#customer.detail div.innerWrap div.control {
+    text-align: center;
+}
+
+#customer.detail div.innerWrap div.control button {
+    padding: 18px 60px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #5d7cbc;
+    color: #fff;
+    font-size: 18px;
+}
+
+#customer.write {
+    padding-top: 30px;
+}
+
+#customer.write div.innerWrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#customer.write div.innerWrap div.agreeZone {
+    margin-bottom: 35px;
+}
+
+#customer.write div.innerWrap div.agreeZone div.innerAgree {
+    height: 300px;
+    padding: 20px 25px;
+    border: 10px solid #ececec;
+    overflow: auto;
+}
+
+#customer.write div.innerWrap div.agreeZone div.innerAgree h2 {
+    padding: 30px 0;
+    text-align: center;
+    font-family: 'S-Core';
+    font-weight: 400;
+    font-size: 24px;
+    color: #31479b;
+}
+
+#customer.write div.innerWrap div.agreeZone div.innerAgree p {
+    line-height: 160%;
+}
+
+#customer.write div.innerWrap div.agreeZone div.innerAgree ul {
+    margin: 10px 0;
+}
+
+#customer.write div.innerWrap div.agreeZone div.innerAgree ul li {
+    position: relative;
+    line-height: 150%;
+    padding-left: 10px;
+}
+
+#customer.write div.innerWrap div.agreeZone div.innerAgree ul li:before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #333;
+    left: 2px;
+    top: 9px;
+}
+
+#customer.write div.innerWrap div.agreeZone div.checkCover {
+    font-size: .8em;
+    padding: 5px;
+    text-align: right;
+    background-color: #dedede;
+}
+
+#customer.write div.innerWrap div.agreeZone div.checkCover input#agreement {
+    margin: 0;
+}
+
+#customer.write div.innerWrap span.agreeDesc {
+    position: relative;
+    display: block;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+#customer.write div.innerWrap span.agreeDesc:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    background: url('../images/sub/agreeCheck.svg') no-repeat left center;
+}
+
+#customer.write div.innerWrap div.agreeList {
+    margin-top: 15px;
+    border-top: 1px solid #ececec;
+}
+
+#customer.write div.innerWrap div.agreeList:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#customer.write div.innerWrap div.agreeList div.item {
+    float: left;
+    width: 50%;
+    border: 1px solid #ececec;
+    border-right: 1px solid #ececec;
+    background-color: #fafafa;
+}
+
+#customer.write div.innerWrap div.agreeList div.item.max {
+    width: 100%;
+}
+
+#customer.write div.innerWrap div.agreeList div.item:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#customer.write div.innerWrap div.agreeList div.item > label {
+    display: block;
+    float: left;
+    width: 190px;
+    padding: 17px 50px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#customer.write div.innerWrap div.agreeList div.item.required label {
+    position: relative;
+}
+
+#customer.write div.innerWrap div.agreeList div.item.required label:before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 18px;
+    left: 28px;
+    background: url('../images/sub/agreeCheck.svg') no-repeat center;
+}
+
+#customer.write div.innerWrap div.agreeList div.item span.label {
+    display: block;
+    float: left;
+    width: 190px;
+    padding: 18px 50px;
+    background-color: #fafafa;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#customer.write div.innerWrap div.agreeList div.item.required span.label {
+    position: relative;
+}
+
+#customer.write div.innerWrap div.agreeList div.item.required span.label:before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 18px;
+    left: 28px;
+    background: url('../images/sub/agreeCheck.svg') no-repeat center;
+}
+
+#customer.write div.innerWrap div.agreeList div.item div.itemBox {
+    display: block;
+    float: left;
+    width: calc(100% - 190px);
+    padding: 10px 20px;
+    border-left: 1px solid #ececec;
+    background-color: #fff;
+}
+
+#customer.write div.innerWrap div.agreeList div.item div.itemBox input {
+    height: 30px;
+    border: 1px solid #ddd;
+}
+
+#customer.write div.innerWrap div.agreeList div.item div.itemBox textarea {
+    width: 100%;
+}
+
+#customer.write div.innerWrap div.agreeList div.item div.itemBox button.d932FileAdd {
+    display: none;
+}
+
+#customer.write div.innerWrap div.agreeList div.item div.itemBox #kcaptcha_image {
+    vertical-align: middle;
+}
+
+#customer.write div.innerWrap div.agreeList div.item div.itemBox .captcha {
+    height: 30px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+#customer.write div.innerWrap div.agreeList div.item div.itemBox span.description {
+    display: block;
+    margin-top: 10px;
+}
+
+#customer.write div.innerWrap div.agreeList div.item div.itemBox span.desc {
+    position: relative;
+    display: block;
+    font-size: 14px;
+    color: #999;
+}
+
+#customer.write div.innerWrap div.control {
+    margin-top: 60px;
+    text-align: center;
+}
+
+#customer.write div.innerWrap div.control button {
+    width: 150px;
+    height: 55px;
+    margin: 0 8px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+#customer.write div.innerWrap div.control button.submit {
+    background-color: #5d7cbc;
+    color: #fff;
+}
+
+#customer.write div.innerWrap div.control button.submit span {
+    padding-left: 20px;
+    background: url('../images/sub/submit.png') no-repeat left center;
+}
+
+#customer.write div.innerWrap div.control button.back {
+    background-color: #f5f5f5;
+}
+
+div.list div.boardSearch {
+    margin-bottom: 10px;
+}
+
+div.list div.boardSearch:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+div.list div.boardSearch form {
+    float: right;
+}
+
+div.list div.boardSearch form div {
+    float: left;
+}
+
+div.list div.boardSearch form div.bsControl {
+    margin-left: 10px;
+}
+
+div.list div.boardSearch form div input {
+    height: 30px;
+}
+
+div.list div.boardSearch form div button {
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid #ececec;
+    font-size: 14px;
+    color: #fff;
+    background-color: #555;
+}
+
+/* ëŒ“ê¸€ í¼ */
+form.none {
+    display: none;
+}
+
+div.cmtWrite {
+    margin-bottom: 25px;
+    padding: 10px 15px;
+    border: 1px solid #ececec;
+    background-color: #f5f5f5;
+}
+
+div.cmtWrite form {
+}
+
+div.cmtWrite form ul:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+div.cmtWrite form ul li {
+}
+
+div.cmtWrite form ul li label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+div.cmtWrite form ul li input {
+    height: 30px;
+    width: 150px;
+}
+
+div.cmtWrite form ul li input#cmtEmail {
+    width: 300px;
+}
+
+div.cmtWrite form ul li textarea {
+    width: calc(100% - 125px);
+    height: 115px;
+    overflow-y: scroll;
+    resize: none;
+}
+
+div.cmtWrite form ul li button.submit {
+    float: right;
+    width: 115px;
+    height: 115px;
+    background-color: #888888;
+    color: #fff;
+    font-weight: 600;
+}
+
+div.cmtWrite form div.info {
+    margin-bottom: 10px;
+}
+
+div.cmtWrite form div.info ul li {
+    float: left;
+    margin-right: 30px;
+}
+
+div.cmtWrite form div.info ul li.captcha:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+div.cmtWrite form ul li.contents {
+    margin-bottom: 10px;
+}
+
+div.cmtWrite form ul li.captcha label {
+    float: left;
+    line-height: 26px;
+}
+
+div.cmtWrite form ul li.captcha div.antiSpam {
+    float: left;
+}
+
+div.cmtWrite form ul li.captcha div.antiSpam img {
+    float: left;
+    vertical-align: bottom;
+}
+
+div.cmtWrite form ul li.captcha div.antiSpam input {
+    float: left;
+    margin-left: 10px;
+}
+
+div.cmtWrite form ul li.captcha div.antiSpam span.description {
+    float: left;
+    margin-left: 10px;
+}
+
+div.cmtWrite form ul li.captcha div.antiSpam span.description span.desc {
+    display: block;
+    font-size: 12px;
+    color: #888;
+}
+
+div.cmtWrite.cmtModifyBox {
+    margin-top: 10px;
+    background-color: #fff;
+}
+
+div.d93CmtConfirm {
+    position: absolute;
+    width: 350px;
+    padding: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -20px;
+    border: 1px solid #ececec;
+    background-color: #fff;
+    z-index: 10;
+}
+
+div.d93CmtConfirm span.title {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+}
+
+div.d93CmtConfirm input {
+    width: 100%;
+}
+
+div.d93CmtConfirm div.control {
+    margin-top: 20px;
+    text-align: center;
+}
+
+div.d93CmtConfirm div.control button {
+    margin: 0 3px;
+    border: 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+div.d93CmtConfirm div.control button.submit {
+    background-color: #5d7cbc;
+}
+
+div.d93CmtConfirm div.control button.close {
+    background-color: #888;
+}
+
+#d93CmtList {
+    padding: 22px 20px;
+    border: 1px solid #e5e5e5;
+    background-color: #f4f4f4;
+}
+
+#d93CmtList div.item {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 40px;
+    background: url('../images/sub/cmtListUser.png') no-repeat left top;
+}
+
+#d93CmtList div.item:before {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 57px;
+    top: 45px;
+    width: 50px;
+    height: 35px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    transform: skew(45deg) rotate(16deg);
+}
+
+#d93CmtList div.item div.infor {
+    position: relative;
+    padding-left: 18px;
+}
+
+#d93CmtList div.item div.infor span.name {
+    font-weight: bold;
+    font-size: 14px;
+    padding-right: 10px;
+    margin-right: 5px;
+    border-right: 1px solid #333;
+}
+
+#d93CmtList div.item div.infor span.date {
+    position: relative;
+    font-size: 13px;
+    color: #666;
+    top: -1px;
+}
+
+#d93CmtList div.item div.content {
+    position: relative;
+    margin: 13px 0 0 18px;
+    padding: 18px;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+#d93CmtList div.item div.content:before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 11px;
+    width: 1px;
+    height: 20px;
+    background-color: #fff;
+}
+
+/* #d93CmtList div.item div.content:before { content: ''; position: absolute; display: block; left: -11px; top: 10px; width: 10px; height: 15px; border-style: solid; border-width: 0 0 1px 1px; border-color: #e5e5e5; background-color: #fff; border-bottom-left-radius: 100%; ;z-index: 10; }
+#d93CmtList div.item div.content:after { content: ''; position: absolute; display: block; left: -11px; top: 5px; width: 10px; height: 10px; border-style: solid; border-width: 0 0 1px 1px; border-color: #e5e5e5; background-color: #f4f4f4; border-bottom-left-radius: 100%; ;z-index: 10;} */
+#d93CmtList div.item div.content span.inner {
+}
+
+#d93CmtList div.item div.infor span.d93CmtControl {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+}
+
+#d93CmtList div.item div.infor span.d93CmtControl button.cmtOption {
+    width: 10px;
+    height: 22px;
+    background: url('../images/sub/cmtListControl.png') no-repeat center;
+    border: 0;
+}
+
+#d93CmtList div.item div.infor span.d93CmtControl button.cmtOption span {
+    display: none;
+}
+
+#d93CmtList div.item div.infor span.d93CmtControl div.optionList {
+    position: absolute;
+    display: none;
+    top: 0;
+    right: 30px;
+    z-index: 10;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#d93CmtList div.item div.infor span.d93CmtControl div.optionList button {
+    width: 80px;
+    padding: 10px 0;
+    font-size: 13px;
+    border: 0;
+    letter-spacing: -0.01em;
+}
+
+#d93CmtList div.item div.infor span.d93CmtControl div.optionList button.modify {
+    border-bottom: 1px solid #f4f4f4;
+}
+
+#d93CmtList div.d93CmtItem.empty {
+    text-align: center;
+    padding: 10px 0;
+    color: #999;
+}
+
+div.list div.innerWrap div.page {
+    margin-top: 40px;
+    text-align: center;
+}
+
+div.list div.innerWrap div.page span.devPage {
+    display: inline-block;
+}
+
+div.list div.innerWrap div.page span.devPage:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+div.list div.innerWrap div.page span.devPage > a {
+    display: block;
+    float: left;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 13px;
+    border: 1px solid #ececec;
+    border-left: 0;
+}
+
+div.list div.innerWrap div.page span.devPage > a.devStartPage {
+    border-left: 1px solid #ececec;
+}
+
+div.list div.innerWrap div.page span.devPage > a.devNowPage {
+    background-color: #666;
+    color: #fff;
+}
+
+div.list div.innerWrap div.page span.devPage span.devPageBlock {
+    display: block;
+    float: left;
+    margin: 0 10px;
+}
+
+div.list div.innerWrap div.page span.devPage span.devPageBlock:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+div.list div.innerWrap div.page span.devPage span.devPageBlock a {
+    display: block;
+    float: left;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #ececec;
+    background-color: #f8f8f8;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+div.list div.innerWrap div.page span.devPage span.devPageBlock a:first-child {
+    border-right: 0;
+}
+
+div.list div.innerWrap div.page span.devPage span.devPageBlock a.devFirstPage {
+    background-image: url('../images/sub/pageFirst.png');
+}
+
+div.list div.innerWrap div.page span.devPage span.devPageBlock a.devPrevPage {
+    background-image: url('../images/sub/pagePrev.png');
+}
+
+div.list div.innerWrap div.page span.devPage span.devPageBlock a.devNextPage {
+    background-image: url('../images/sub/pageNext.png');
+}
+
+div.list div.innerWrap div.page span.devPage span.devPageBlock a.devLastPage {
+    background-image: url('../images/sub/pageLast.png');
+}
+
+div.list div.innerWrap div.page span.devPage span.devPageBlock a span {
+    display: none;
+}
+
+/* íŒì—… */
+div#gsPopup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    top: 0;
+    left: 0;
+    z-index: 10000;
+}
+
+div#gsPopup .contents {
+    height: 100%;
+}
+
+div#gsPopup .contents .content {
+    height: 100%;
+    padding: 80px 0;
+    text-align: center;
+}
+
+div#gsPopup .contents .content .thumb {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    background: none !important;
+}
+
+div#gsPopup .contents .content .thumb img {
+    max-height: 100%;
+}
+
+div#gsPopup .contents .content .thumb .popupTitle {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background: rgba(0,0,0,0.6);
+}
+
+div#gsPopup .contents .content .thumb .popupTitle span {
+    line-height: 140%;
+    color: #fff;
+}
+
+div#gsPopup .contents .content .thumb .control {
+    position: absolute;
+    right: 0;
+    margin-top: -3px;
+}
+
+div#gsPopup .contents .content .thumb .control button {
+    padding: 10px;
+    background-color: #ececec;
+    border-radius: 0 0 5px 5px;
+}
+
+div#gsPopup .contents .content .thumb .control button:before {
+    content: '\f00d';
+    font-family: 'FontAwesome';
+    color: #333;
+    font-size: 40px;
+    line-height: 25px;
+}
+
+div#gsPopup .contents .content .thumb .control button span {
+    display: none;
+}
+
+/* FILE UPLOADER */
+form.d932FileForm {
+    display: block;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+div.d932FileForm {
+    position: fixed;
+    width: 0;
+    height: 0;
+    right: -1px;
+    bottom: -1px;
+    overflow: hidden;
+}
+
+ul.d932File.d932FileDrop {
+    border: 1px solid #DDD;
+    box-shadow: 1px 1px 3px #DDD inset;
+    background-color: #F5F5F5;
+    border-radius: 5px;
+    padding: 0.5em;
+}
+
+ul.d932File:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+ul.d932File li {
+    float: left;
+    overflow: hidden;
+    position: relative;
+    margin: 0.5em;
+}
+
+ul.d932File li.ghost {
+    width: 5em;
+    height: 5em;
+    border: 3px dashed #DDD;
+}
+
+ul.d932File li label {
+    border: 1px solid #DDD;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    box-sizing: border-box;
+    background: #F5F5F5;
+    padding: 0.5em;
+}
+
+ul.d932File li:hover label {
+    background-size: 80%;
+    transition: background-size 0.3s;
+}
+
+ul.d932File li label span.thumb {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url('../../_Master/resource/images/ico.upload_DDDDDD.svg') no-repeat center / contain;
+}
+
+ul.d932File li label span.thumb span {
+    display: none;
+}
+
+ul.d932File li label span.name {
+    display: none;
+}
+
+ul.d932File li span.caption {
+    margin-top: -1px;
+    display: block;
+}
+
+ul.d932File.d932FileDrop li label {
+    background-color: #FFF;
+}
+
+ul.d932File li button {
+    position: absolute;
+    width: 50%;
+    border: 0;
+    top: -3em;
+    color: #FFF;
+    line-height: 3em;
+    font-size: 0.7em;
+    padding: 0 0.5em;
+}
+
+ul.d932File li button:hover {
+    text-decoration: underline;
+}
+
+ul.d932File li button.downFile {
+    left: 0;
+    background-color: #0e47a1;
+    transition: top 0.3s;
+}
+
+ul.d932File li button.delFile {
+    right: 0;
+    background-color: #ce3e51;
+    transition: top 0.3s;
+}
+
+ul.d932File li:hover button.downFile, ul.d932File li:hover button.delFile {
+    top: 0;
+    transition: top 0.3s;
+}
+
+ul.d932File li button.rotate {
+    width: 30px;
+    height: 30px;
+    top: 45%;
+    left: 1px;
+    margin-top: -15px;
+    background: url('../../_Master/resource/images/blit.rotate.png') no-repeat center / 60%;
+}
+
+ul.d932File li button.rotate.rotate90 {
+    left: auto;
+    right: 1px;
+    transform: scaleX(-1);
+}
+
+ul.d932File li button.rotate span {
+    display: none;
+}
+
+/* TEMP */
+button {
+    border: 1px solid #DDD;
+    padding: 0.5em 1em;
+    background-color: #FFF;
+}
+
+a.button {
+    display: inline-block;
+    border: 1px solid #DDD;
+    padding: 0.5em 1em;
+    background-color: #FFF;
+}
+
+/* ì „ì²´ ë°˜ì‘í˜• */
+@media (max-width: 1200px) {
+    #header {
+        padding: 0 10px;
+    }
+
+    #gnb {
+        padding-left: 20px;
+    }
+
+    #header div.innerWrap h1 {
+        width: 190px;
+        padding: 25px 0;
+    }
+
+    #gnb ul.navi.depth1 > li {
+        padding: 28px 20px;
+    }
+
+    #gnb ul.navi.depth1 > li > a span {
+        font-size: 15px;
+    }
+
+    #visual div.visualArea ul.visual {
+        padding: 0 10px;
+    }
+
+    #visual div.visualArea ul.visual li div.txtBox {
+        left: 10px;
+    }
+
+    #visual div.visualArea ul.visual li a {
+        width: calc(100% - 200px);
+        right: 0;
+        background-position: 150px center;
+    }
+
+    #visual div.visualArea div.catalog {
+        left: 10px;
+    }
+
+    #visual div.visualArea div.manual {
+        right: 10px;
+    }
+
+    #footer div.noticeBox {
+        padding: 15px 10px;
+    }
+
+    #footer div.innerWrap {
+        padding: 30px 10px;
+    }
+
+    #footer div.innerWrap div.policy {
+        right: 10px;
+    }
+
+    #subVisual div.innerWrap {
+        padding: 0 10px;
+    }
+
+    #subVisual div.innerWrap ul li span.thumb {
+        right: 30px;
+    }
+
+    #container.sub {
+        padding: 40px 10px;
+    }
+
+    div.greet div.imageBox {
+        position: relative;
+    }
+
+    #greeting div.innerWrap div.txtBox div.imp {
+        font-size: 20px;
+    }
+
+    #vision div.innerWrap div.txtArea {
+        margin-top: 0;
+    }
+
+    #agency div.innerWrap div.item div.info {
+        width: calc(100% - 205px);
+    }
+}
+
+@media (max-width: 1024px) {
+    #gnb {
+        /* kji
+        display: none; */
+    }
+
+    #header {
+        height: 70px;
+    }
+
+    #header div.innerWrap h1 {
+        padding: 15px 0;
+    }
+
+    #header div.search {
+        display: none;
+    }
+
+    #header div.innerWrap div.sideBtn {
+        position: relative;
+        display: block;
+        float: right;
+        top: 17px;
+        right: 10px;
+    }
+
+    #header div.innerWrap div.sideBtn button {
+        width: 30px;
+        height: 30px;
+        border: 0;
+        background: url('../images/mobile/navBtn.png') no-repeat center;
+    }
+
+    #header div.innerWrap div.sideBtn button span {
+        display: none;
+    }
+
+    #footer div.innerWrap div.policy {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 20px;
+    }
+
+    #sideNav {
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    #sideNav div.back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    #sideNav div.back span {
+        display: none;
+    }
+
+    #sideNav div.navBox {
+        position: absolute;
+        width: 280px;
+        height: 100%;
+        top: 0;
+        right: -300px;
+        background-color: #fff;
+        z-index: 100;
+    }
+
+    #sideNav div.navBox div.search {
+        padding: 17px 15px;
+        background-color: #1D2088;
+    }
+
+    #sideNav div.navBox div.search:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    #sideNav div.navBox div.search form {
+        display: block;
+        float: left;
+        width: 200px;
+        height: 35px;
+        border-bottom: 1px solid #fff;
+    }
+
+    #sideNav div.navBox div.search form input {
+        width: 160px;
+        height: 25px;
+        margin-right: 3px;
+        border: 0;
+        background-color: #1D2088;
+        color: #fff;
+    }
+
+    #sideNav div.navBox div.search form input:focus {
+        outline: none;
+    }
+
+    #sideNav div.navBox div.search form button {
+        width: 21px;
+        height: 21px;
+        border: 0;
+        background: url('../images/mobile/searchMobile.svg') no-repeat center;
+    }
+
+    #sideNav div.navBox div.search form button span {
+        display: none;
+    }
+
+    #sideNav div.navBox div.search button.navClose {
+        display: block;
+        float: right;
+        width: 22px;
+        height: 22px;
+        margin-top: 8px;
+        border: 0;
+        background: url('../images/mobile/navClose.svg') no-repeat center;
+    }
+
+    #sideNav div.navBox div.search button.navClose span {
+        display: none;
+    }
+
+    #sideNav div.navBox div.navListBox {
+        overflow-y: scroll;
+        padding-bottom: 30px;
+    }
+
+    #sideNav div.navBox div.navListBox div.navList {
+        padding: 25px 15px;
+        background-color: #fff;
+        border-bottom: 1px solid #ececec;
+    }
+
+    #sideNav div.navBox div.navListBox div.navList ul.depth1 > li {
+    }
+
+    #sideNav div.navBox div.navListBox div.navList ul.depth1 > li > a {
+        position: relative;
+        display: block;
+        padding: 13px 18px;
+        border-bottom: 1px solid #ececec;
+    }
+
+    #sideNav div.navBox div.navListBox div.navList ul.depth1 > li > a.selected {
+        color: #1D2088;
+        font-weight: bold;
+    }
+
+    #sideNav div.navBox div.navListBox div.navList ul.depth1 > li.hasChild > a:before {
+        content: '';
+        position: absolute;
+        right: 12px;
+        top: 13px;
+        width: 20px;
+        height: 20px;
+        background: url('../images/mobile/navListShow.png') no-repeat center;
+    }
+
+    #sideNav div.navBox div.navListBox div.navList ul.depth1 > li > a.active:before {
+        background: url('../images/mobile/navListClose.png') no-repeat center;
+    }
+
+    #sideNav div.navBox div.navListBox div.navList ul.depth1 > li > a span.name {
+        display: none;
+    }
+
+    #sideNav div.navBox div.navListBox div.navList ul.depth1 > li > a.active span.name {
+        display: block;
+    }
+
+    #sideNav div.navBox div.navListBox div.navList ul.depth1 > li > a.active span.subName {
+        display: none;
+    }
+
+    #sideNav div.navBox div.navListBox div.navList ul.depth1 > li div.depth2 {
+        display: none;
+        padding: 5px 0;
+        border-bottom: 1px solid #ececec;
+    }
+
+    #sideNav div.navBox div.navListBox div.navList ul.depth1 > li div.depth2 div.title {
+        display: none;
+    }
+
+    #sideNav div.navBox div.navListBox div.navList ul.depth1 > li div.depth2 ul.depth2 > li > a {
+        position: relative;
+        display: block;
+        padding: 8px 10px 8px 30px;
+    }
+
+    #sideNav div.navBox div.navListBox div.navList ul.depth1 > li div.depth2 ul.depth2 > li > a:before {
+        content: '';
+        position: absolute;
+        left: 18px;
+        top: 18px;
+        width: 7px;
+        height: 1px;
+        background-color: #333;
+    }
+
+    #sideNav div.navBox div.navListBox div.navList ul.depth1 > li div.depth2 ul.depth2 > li > a span {
+        font-size: 0.9em;
+    }
+
+    #sideNav div.navBox div.navListBox div.navList ul.depth1 > li div.depth2 ul.depth2 > li > a span.subName {
+        display: none;
+    }
+
+    #sideNav div.navBox div.navListBox div.navList ul.depth1 > li+li div.depth2 ul.depth2 > li > a span.subName {
+        display: block;
+    }
+
+    #sideNav div.navBox div.navListBox div.navList ul.depth1 > li+li div.depth2 ul.depth2 > li > a span.name {
+        display: none;
+    }
+
+    #sideNav div.navBox div.navListBox div.navList ul.depth1 > li div.depth2 ul.depth2 > li > a.selected:before {
+        background-color: #1D2088;
+    }
+
+    #sideNav div.navBox div.navListBox div.navList ul.depth1 > li div.depth2 ul.depth2 > li > a.selected span {
+        color: #1D2088;
+    }
+
+    #sideNav div.navBox div.navListBox div.navList ul.depth1 > li div.depth2 div.shortcut {
+        display: none;
+    }
+
+    #sideNav div.navBox div.navListBox div.catalog {
+        border-bottom: 1px solid #ececec;
+    }
+
+    #sideNav div.navBox div.navListBox div.catalog span.innerTxt {
+        display: block;
+        height: 100%;
+    }
+
+    #sideNav div.navBox div.navListBox div.catalog a {
+        position: relative;
+        display: block;
+    }
+
+    #sideNav div.navBox div.navListBox div.catalog a span.backBox {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+        background: url('../images/main/catalogImg.png') no-repeat 10px bottom;
+        text-indent: -9999px;
+    }
+
+    #sideNav div.navBox div.navListBox div.catalog a span.innerTxt {
+        position: relative;
+        padding: 20px 15px;
+    }
+
+    #sideNav div.navBox div.navListBox div.catalog a span.innerTxt span {
+        display: block;
+        font-weight: 600;
+        text-align: right;
+    }
+
+    #sideNav div.navBox div.navListBox div.catalog a span.innerTxt span.title {
+        font-size: 1.5em;
+    }
+
+    #visual {
+        height: auto;
+        background: url('../images/main/backVisual.jpg') no-repeat right top;
+    }
+
+    #visual div.visualArea {
+        padding: 30px 10px 0;
+    }
+
+    #visual div.visualArea ul.visual {
+        height: 500px;
+    }
+
+    #visual div.visualArea ul.visual li {
+    }
+
+    #visual div.visualArea ul.visual li div.txtBox {
+        position: relative;
+        margin-bottom: 30px;
+        left: 0;
+    }
+
+    #visual div.visualArea ul.visual li a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 300px;
+        bottom: 0;
+        background-position: center;
+        background-size: contain;
+    }
+
+    #visual div.visualArea div.control {
+        width: calc(100% - 20px);
+    }
+
+    #footer div.innerWrap div.logo {
+        display: none;
+    }
+
+    #visual div.visualArea div.shortcut {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: space-between;
+        background: #FFF;
+        width: calc(100% + 20px);
+        margin-left: -10px;
+        padding: 5px 5px;
+    }
+
+    #visual div.visualArea div.shortcut div {
+        position: relative;
+        width: 50%;
+        padding: 5px;
+    }
+
+    #visual div.visualArea div.shortcut div.catalog {
+        left: auto;
+        bottom: auto;
+    }
+
+    #visual div.visualArea div.shortcut div.manual {
+        left: auto;
+        bottom: auto;
+    }
+
+    #visual div.visualArea div.shortcut div a {
+        width: 100%;
+    }
+
+    #subVisual {
+        height: 180px;
+    }
+
+    #subVisual div.innerWrap ul li div.txtBox {
+        position: relative;
+        left: 0;
+        top: 50px;
+    }
+
+    #subVisual div.innerWrap ul li span.thumb {
+        display: none;
+    }
+
+    #snb div.innerWrap div.snbList.depth3 {
+        display: none;
+    }
+
+    #snb div.innerWrap div.snb {
+        width: calc(100% - 50px);
+        float: left;
+    }
+
+    #snb div.innerWrap div.snb:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    #snb div.innerWrap div.snbList {
+        width: 50%;
+    }
+
+    #snb div.innerWrap div.snbList div.snbTitle {
+        width: 100%;
+    }
+
+    #snb div.innerWrap div.snbList div.snbTitle a:hover:before {
+        border: 1px solid #e5e5e5;
+        background: url('../images/sub/snbArrow.svg') no-repeat center;
+        background-size: 50%;
+    }
+
+    #snb div.innerWrap div.snbList div.snbTitle a.selected:before {
+        border: 1px solid #3172c4;
+        background: url('../images/sub/snbArrowActive.svg') no-repeat center;
+        background-size: 50%;
+    }
+
+    div.mobileDep3 {
+        position: relative;
+        display: block;
+        padding: 20px 0;
+        background-color: #f2f2f2;
+    }
+
+    div.mobileDep3 div.listBox {
+        display: block;
+    }
+
+    div.mobileDep3 div.listBox a {
+        position: relative;
+        display: block;
+        width: 300px;
+        height: 30px;
+        line-height: 30px;
+        margin: 0 auto;
+        padding: 0 30px;
+        text-align: center;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    div.mobileDep3 div.listBox a:before {
+        content: '\f107';
+        font-family: 'FontAwesome';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        right: 20px;
+        font-size: 1.1rem;
+        color: #333;
+    }
+
+    div.mobileDep3 ul {
+        display: none;
+        position: absolute;
+        width: 100%;
+        z-index: 10;
+    }
+
+    div.mobileDep3 ul li {
+        width: 300px;
+        margin: 0 auto;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-top: 0;
+    }
+
+    div.mobileDep3 ul li a {
+        display: block;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+        background-color: #fff;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    div.mobileDep3 ul li a.selected {
+        background-color: #315FC4;
+        color: #fff;
+    }
+
+    #container div.pageTitle div.innerWrap div.common {
+        display: none;
+    }
+
+    #container div.pageTitle div.innerWrap div.title span.mTitle {
+        font-size: 36px;
+    }
+
+    #container.sub div.content {
+        padding-top: 40px;
+    }
+
+    div.greet div.imageBox {
+        display: none;
+    }
+
+    #greeting div.innerWrap div.txtBox {
+        padding-left: 0;
+    }
+
+    #greeting div.innerWrap div.txtBox div.greet {
+        padding-left: 0;
+        font-size: 14px;
+        word-break: keep-all;
+    }
+
+    #greeting div.innerWrap div.txtBox p {
+        padding-left: 0;
+        font-size: 14px;
+        word-break: keep-all;
+    }
+
+    #greeting div.innerWrap div.engBox {
+        margin-left: 0;
+    }
+
+    #vision div.innerWrap div.txtArea {
+        float: none;
+        width: 100%;
+        padding: 0;
+    }
+
+    #vision div.innerWrap div.imgArea {
+        display: none;
+    }
+
+    #group {
+    }
+
+    #group div.innerWrap div.pc {
+        display: none;
+    }
+
+    #group div.innerWrap div.mobile {
+        display: block;
+    }
+
+    #group div.innerWrap div.mobile div.ceo {
+        margin-bottom: 20px;
+    }
+
+    #group div.innerWrap div.mobile div.ceo div.ceoBox {
+        width: 250px;
+        margin: 0 auto;
+        padding: 6px;
+        text-align: center;
+        border: 1px solid #ebebeb;
+        border-radius: 5px;
+        box-shadow: 4px 4px 0px #ebebeb;
+    }
+
+    #group div.innerWrap div.mobile div.ceo div.ceoBox > span {
+        display: block;
+    }
+
+    #group div.innerWrap div.mobile div.ceo div.ceoBox span.logo {
+        padding: 10px 0;
+    }
+
+    #group div.innerWrap div.mobile div.ceo div.ceoBox span.info {
+        padding: 10px 0;
+        font-size: 14px;
+        background-color: #315fc4;
+        border-radius: 5px;
+    }
+
+    #group div.innerWrap div.mobile div.ceo div.ceoBox span.info span {
+        display: block;
+        color: #fff;
+    }
+
+    #group div.innerWrap div.mobile div.ceo div.ceoBox span.info span.sName {
+        color: rgba(255,255,255,0.6);
+    }
+
+    #group div.innerWrap div.mobile div.brench {
+    }
+
+    #group div.innerWrap div.mobile div.brench:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    #group div.innerWrap div.mobile div.brench div.item {
+        float: left;
+        width: 50%;
+        margin-bottom: 15px;
+        padding: 0 10px;
+    }
+
+    #group div.innerWrap div.mobile div.brench div.item.max {
+        width: 100%;
+    }
+
+    #group div.innerWrap div.mobile div.brench div.item div.inner {
+        padding: 7px;
+        border: 1px solid #ebebeb;
+        border-radius: 5px;
+        box-shadow: 3px 3px 0px #ebebeb;
+    }
+
+    #group div.innerWrap div.mobile div.brench div.item div.inner span.name {
+        display: block;
+        margin-bottom: 8px;
+        padding: 10px 0;
+        font-size: 12px;
+        border-radius: 5px;
+        text-align: center;
+        background-color: #5d7cbc;
+    }
+
+    #group div.innerWrap div.mobile div.brench div.item div.inner span.name span {
+        display: block;
+        color: #fff;
+    }
+
+    #group div.innerWrap div.mobile div.brench div.item div.inner span.name span.sName {
+        color: rgba(255,255,255,0.6);
+    }
+
+    #group div.innerWrap div.mobile div.brench div.item div.inner span.desc {
+        position: relative;
+        display: block;
+        margin-bottom: 5px;
+        padding-left: 7px;
+        font-size: 12px;
+    }
+
+    #group div.innerWrap div.mobile div.brench div.item div.inner span.desc:before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        left: 2px;
+        top: 6px;
+        background-color: #333;
+    }
+
+    #group div.innerWrap div.mobile div.brench div.item div.inner ul {
+        min-height: 50px;
+    }
+
+    #group div.innerWrap div.mobile div.brench div.item div.inner ul:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    #group div.innerWrap div.mobile div.brench div.item div.inner ul li {
+        position: relative;
+        font-size: 12px;
+        padding-left: 7px;
+        margin-bottom: 2px;
+        color: #3631c4;
+    }
+
+    #group div.innerWrap div.mobile div.brench div.item div.inner ul li:before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        left: 2px;
+        top: 6px;
+        background-color: #3631c4;
+    }
+
+    #group div.innerWrap div.mobile div.brench div.item div.inner ul.half li {
+        float: left;
+        width: 50%;
+    }
+
+    #group div.innerWrap div.mobile div.brench div.item div.inner div.image {
+        margin-top: 10px;
+    }
+
+    #group div.innerWrap div.mobile div.brench div.item div.inner div.image:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    #group div.innerWrap div.mobile div.brench div.item div.inner div.image span {
+        display: block;
+        float: left;
+        width: calc(50% - 5px);
+        height: 70px;
+        border: 3px solid #ececec;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-indent: -9999px;
+    }
+
+    #group div.innerWrap div.mobile div.brench div.item div.inner div.image span:first-child {
+        margin-right: 10px;
+    }
+
+    #history div.innerWrap div.title {
+        display: none;
+    }
+
+    #history div.innerWrap ul li span.year {
+        position: relative;
+        float: none;
+        padding: 0;
+        padding-left: 25px;
+        font-size: 24px;
+        background-color: #fff;
+        color: #333;
+        width: auto;
+        text-align: left;
+    }
+
+    #history div.innerWrap ul li span.year:before {
+        content: '';
+        position: absolute;
+        left: 0px;
+        top: 4px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 5px solid #4A82C5;
+        background-color: #fff;
+    }
+
+    #history div.innerWrap ul li span.month {
+        position: relative;
+        width: auto;
+        height: auto;
+        left: 0;
+        padding-left: 20px;
+        text-align: left;
+        font-weight: 600;
+        color: #4A82C5;
+        background-color: #fff;
+    }
+
+    #history div.innerWrap ul li span.month:before {
+        content: '';
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        top: 16px;
+        left: 11px;
+        border-radius: 50%;
+        background-color: #4A82C5;
+    }
+
+    #history div.innerWrap ul li span.month:after {
+        content: ' ì›”';
+    }
+
+    #history div.innerWrap ul li span.month.count2, #history div.innerWrap ul li span.month.count4, #history div.innerWrap ul li span.month.count6 {
+        background-color: #fff;
+    }
+
+    #history div.innerWrap ul li div.item {
+        padding-left: 0;
+    }
+
+    #history div.innerWrap ul li div.item span.content {
+        position: relative;
+        padding-left: 30px;
+        font-size: 14px;
+    }
+
+    #history div.innerWrap ul li div.item span.content:before {
+        content: '';
+        position: absolute;
+        width: 3px;
+        height: 1px;
+        top: 10px;
+        left: 20px;
+        background-color: #333;
+    }
+
+    #history div.innerWrap ul li div.item span.engCont {
+        font-size: 12px;
+        color: #999;
+        padding-left: 30px;
+    }
+
+    #history div.innerWrap ul li span.option {
+        position: relative;
+        width: auto;
+        padding-left: 20px;
+        margin: 0;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: left;
+        color: #4A82C5;
+        background-color: #fff;
+    }
+
+    #history div.innerWrap ul li span.option.count2 {
+        background-color: #fff;
+    }
+
+    #history div.innerWrap ul li span.option:before {
+        content: '';
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        top: 16px;
+        left: 11px;
+        border-radius: 50%;
+        background-color: #4A82C5;
+    }
+
+    #history div.innerWrap ul li div.item.option {
+        padding-left: 0;
+    }
+
+    #machine.list div.innerWrap div.item {
+        width: 50%;
+    }
+
+    #machine.list div.innerWrap div.item div.inner div.info span.title {
+        font-size: 14px;
+    }
+
+    #machine.list div.innerWrap div.item div.inner div.info span.contents p {
+        font-size: 12px;
+    }
+
+    #location div.innerWrap div.item div.mapBox {
+        padding: 10px;
+    }
+
+    #policy div.innerWrap h2 {
+        padding: 20px 0;
+        font-size: 22px;
+        word-break: keep-all;
+    }
+
+    #policy div.innerWrap p {
+        font-size: 14px;
+    }
+
+    #policy div.innerWrap ul li {
+        font-size: 14px;
+    }
+
+    #product div.category {
+        display: none;
+    }
+
+    #product div.list div.innerWrap ul li {
+        margin-bottom: 50px;
+    }
+
+    #product div.detail {
+        margin-top: 40px;
+    }
+
+    #product div.detail div.innerWrap div.title {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+
+    #product div.detail div.innerWrap div.image {
+        height: 400px;
+        margin-bottom: 40px;
+    }
+
+    #product div.detail div.itemList div.value table.list {
+        width: 1024px;
+        font-size: 14px;
+    }
+
+    #product div.detail div.itemList div.value .tableWrap {
+        position: relative;
+        width: 100%;
+    }
+
+    #product div.detail div.itemList div.value .tableWrap .scroll {
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 0;
+    }
+
+    #product div.detail div.itemList div.value .tableWrap .scroll.rightScroll span.rightTxt {
+        position: relative;
+        font-size: 13px;
+        display: block;
+        text-align: right;
+    }
+
+    #product div.detail div.itemList div.value .tableWrap .scroll.rightScroll span.rightTxt:before {
+        content: '';
+        display: block;
+        position: absolute;
+    }
+
+    #product div.detail div.itemList div.value .tableWrap .scroll.rightScroll span.arrow {
+        display: block;
+        position: relative;
+        float: right;
+        width: 7px;
+        height: 15px;
+    }
+
+    #product div.detail div.itemList div.value .tableWrap .scroll.rightScroll span.arrow:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 0.7em;
+        height: 0.7em;
+        top: 2px;
+        left: 0;
+        border: 2px solid #999;
+        border-top: 0;
+        border-left: 0;
+        transform: rotate(-45deg);
+    }
+
+    #product div.detail div.itemList div.value .tableWrap .scroll.rightScroll span.arrow:first-child {
+        margin-right: 5px;
+    }
+
+    #product div.detail div.itemList div.value .tableWrap .scroll.rightScroll span.arrow:nth-child(2) {
+        margin-right: 1px;
+    }
+
+    #product div.detail div.itemList div.value .tableWrap .scroll.rightScroll span.arrow:nth-child(3) {
+        margin-right: 1px;
+    }
+
+    #product div.detail div.itemList div.value .tableWrap .scroll.leftScroll span.leftTxt {
+        position: relative;
+        font-size: 13px;
+        display: block;
+        text-align: left;
+    }
+
+    #product div.detail div.itemList div.value .tableWrap .scroll.leftScroll span.leftTxt:before {
+        content: '';
+        display: block;
+        position: absolute;
+    }
+
+    #product div.detail div.itemList div.value .tableWrap .scroll.leftScroll span.arrow {
+        display: block;
+        position: relative;
+        float: left;
+        width: 7px;
+        height: 15px;
+    }
+
+    #product div.detail div.itemList div.value .tableWrap .scroll.leftScroll span.arrow:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 0.7em;
+        height: 0.7em;
+        top: 2px;
+        left: 0;
+        border: 2px solid #999;
+        border-bottom: 0;
+        border-right: 0;
+        transform: rotate(-45deg);
+    }
+
+    #product div.detail div.itemList div.value .tableWrap .scroll.leftScroll span.arrow:first-child {
+        margin-left: 5px;
+    }
+
+    #product div.detail div.itemList div.value .tableWrap .scroll.leftScroll span.arrow:nth-child(2) {
+        margin-left: 1px;
+    }
+
+    #product div.detail div.itemList div.value .tableWrap .scroll.leftScroll span.arrow:nth-child(3) {
+        margin-left: 1px;
+    }
+
+    #product div.detail div.itemList div.value div.tableList {
+        overflow-x: scroll;
+        padding-top: 15px;
+        -ms-overflow-style: none;
+    }
+
+    /* #product div.detail div.itemList div.value div.tableList::-webkit-scrollbar { display: none; } */
+    #product div.detail div.itemList div.value div.tableList table.list {
+        overflow-y: auto;
+        min-width: 1024px;
+    }
+
+    #customer.write div.innerWrap div.agreeZone div.innerAgree h2 {
+        padding: 20px 0;
+        font-size: 22px;
+    }
+
+    #customer.write div.innerWrap div.agreeZone div.innerAgree p {
+        font-size: 14px;
+    }
+
+    #customer.write div.innerWrap div.agreeZone div.innerAgree ul li {
+        font-size: 14px;
+    }
+
+    #customer.write div.innerWrap div.agreeList div.item {
+        float: none;
+        width: 100%;
+    }
+
+    #customer.write div.innerWrap div.agreeList div.item div.itemBox span.desc {
+        font-size: 12px;
+    }
+
+    div.cmtWrite form div.info ul li {
+        margin-bottom: 5px;
+    }
+
+    div.cmtWrite form div.info ul li label {
+        width: 60px;
+        display: inline-block;
+    }
+}
+
+@media (max-width: 768px) {
+    #visual div.visualArea ul.visual li div.txtBox span {
+        font-size: 14px;
+    }
+
+    #visual div.visualArea ul.visual li div.txtBox span.subject {
+        font-size: 28px;
+    }
+
+    #visual div.visualArea div.shortcut {
+        display: block;
+    }
+
+    #visual div.visualArea div.shortcut div {
+        width: auto;
+    }
+
+    #footer div.noticeBox div.innerNotice div.title {
+        margin-right: 20px;
+        font-size: 16px;
+    }
+
+    #footer div.noticeBox div.innerNotice div.noticeList {
+        width: calc(100% - 160px);
+    }
+
+    #footer div.noticeBox div.innerNotice div.noticeList ul li {
+        line-height: 130%;
+    }
+
+    #footer div.innerWrap div.infor div.list {
+        margin-bottom: 10px;
+    }
+
+    #footer div.innerWrap div.infor div.list div.infoList {
+        display: block;
+    }
+
+    #footer div.innerWrap div.infor div.list div.infoList:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    #footer div.innerWrap div.infor div.list div.infoList > div {
+        margin-bottom: 5px;
+    }
+
+    #footer div.innerWrap div.infor div.list div.infoList div.addr {
+        display: block;
+        float: none;
+    }
+
+    #footer div.innerWrap div.infor div.list div.infoList div.addr label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+
+    #container div.pageTitle div.innerWrap div.title {
+        padding-bottom: 10px;
+    }
+
+    #container div.pageTitle div.innerWrap div.title span.sTitle {
+        font-size: 16px;
+    }
+
+    #container div.pageTitle div.innerWrap div.title span.mTitle {
+        font-size: 28px;
+    }
+
+    #greeting div.innerWrap div.txtBox p {
+        margin-bottom: 20px;
+    }
+
+    #agency div.innerWrap div.item div.corp {
+        position: relative;
+        float: none;
+        width: auto;
+        padding: 0 0 5px 25px;
+        text-align: left;
+        background-color: #fff;
+    }
+
+    #agency div.innerWrap div.item div.corp:before {
+        content: '';
+        position: absolute;
+        left: 0px;
+        top: 1px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 5px solid #4A82C5;
+        background-color: #fff;
+    }
+
+    #agency div.innerWrap div.item:nth-child(2n) div.corp {
+        background-color: #fff;
+    }
+
+    #agency div.innerWrap div.item div.corp.solo {
+        padding: 0 0 5px 25px;
+    }
+
+    #agency div.innerWrap div.item div.corp span {
+        display: inline;
+        color: #333;
+    }
+
+    #agency div.innerWrap div.item div.corp span.name {
+        font-size: 20px;
+    }
+
+    #agency div.innerWrap div.item div.corp span.subName {
+        margin-left: 5px;
+        font-size: 14px;
+        color: #999;
+    }
+
+    #agency div.innerWrap div.item div.info {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #vision div.innerWrap div.txtArea div.item {
+        margin-bottom: 20px;
+    }
+
+    #location div.innerWrap div.item {
+        margin-top: 25px;
+    }
+
+    #location div.innerWrap div.item div.office span.title {
+        position: relative;
+        float: none;
+        width: auto;
+        padding: 0 0 10px 25px;
+        font-size: 20px;
+        text-align: left;
+        color: #333;
+        background-color: #fff;
+    }
+
+    #location div.innerWrap div.item div.office span.title span.sub {
+        display: inline;
+        margin-left: 5px;
+        margin-top: 0;
+        color: #999;
+    }
+
+    #location div.innerWrap div.item div.office span.title:before {
+        content: '';
+        position: absolute;
+        left: 0px;
+        top: 1px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 5px solid #4A82C5;
+        background-color: #fff;
+    }
+
+    #location div.innerWrap div.item div.office.head span.title {
+        background-color: #fff;
+    }
+
+    #location div.innerWrap div.item div.office div.info {
+        width: 100%;
+        padding-left: 20px;
+    }
+
+    #location div.innerWrap div.item div.office div.info ul li {
+        font-size: 14px;
+    }
+
+    #location div.innerWrap div.item div.mapBox {
+        padding: 0;
+    }
+
+    #product div.detail {
+        margin-top: 25px;
+    }
+
+    #product div.detail div.innerWrap div.title {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    #product div.list div.innerWrap ul li {
+        width: 33.3%;
+        margin-bottom: 40px;
+    }
+
+    #product div.detail div.innerWrap div.item div.itemList div.value div.kor {
+        margin-bottom: 40px;
+    }
+
+    #product div.detail div.innerWrap div.control a {
+        padding: 15px 40px;
+        font-size: 14px;
+    }
+
+    #notice.list div.innerWrap div.title {
+        display: none;
+    }
+
+    #notice.list div.innerWrap div.boardList {
+        border-top: 2px solid #333;
+    }
+
+    #notice.list div.innerWrap div.boardList div.board ul li {
+        padding: 10px 5px;
+    }
+
+    #notice.list div.innerWrap div.boardList div.board ul li a span {
+        float: none;
+        padding: 0;
+        border-left: 0;
+        text-align: left;
+    }
+
+    #notice.list div.innerWrap div.boardList div.board ul li a span.subject {
+        width: 100%;
+        margin: 3px 0 5px;
+        font-size: 14px;
+        color: #333;
+    }
+
+    #notice.list div.innerWrap div.boardList div.board ul li a span.num {
+        display: none;
+    }
+
+    #notice.list div.innerWrap div.boardList div.board ul li a span.date {
+        width: auto;
+        font-size: 12px;
+    }
+
+    #notice.list div.innerWrap div.boardList div.board ul li a span.date:before {
+        content: '\f274';
+        font-family: 'FontAwesome';
+        color: #75cad2;
+        margin-right: 5px;
+    }
+
+    #notice.detail div.innerWrap div.info div.file {
+        float: none;
+        padding: 10px;
+        border-bottom: 1px solid #ececec;
+    }
+
+    #notice.detail div.innerWrap div.info div span.title {
+        float: none;
+        padding: 0;
+        border-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #notice.detail div.innerWrap div.info div span.value {
+        float: none;
+        padding: 0;
+        font-size: 12px;
+        color: #999;
+    }
+
+    #notice.detail div.innerWrap div.info div.file {
+        float: none;
+        padding: 0;
+        border-bottom: 1px solid #ececec;
+    }
+
+    #notice.detail div.innerWrap div.info div.file span.title {
+        padding: 5px 0 0 10px;
+    }
+
+    #notice.detail div.innerWrap div.info div.file span.value {
+        padding: 0 0 5px 10px;
+    }
+
+    #notice.detail div.innerWrap div.info div.file a {
+        display: inline-block;
+        float: none;
+        margin-bottom: 5px;
+    }
+
+    #notice.detail div.innerWrap div.info div.date {
+        float: none;
+        padding: 10px;
+        border-left: 0;
+    }
+
+    #notice.detail div.innerWrap div.control button {
+        padding: 15px 40px;
+        font-size: 14px;
+    }
+
+    #customer.list div.innerWrap div.title {
+        display: none;
+    }
+
+    #customer.list div.innerWrap div.boardList {
+        border-top: 2px solid #333;
+    }
+
+    #customer.list div.innerWrap div.boardList div.board ul li {
+        padding: 10px 5px;
+    }
+
+    #customer.list div.innerWrap div.boardList div.board ul li a span {
+        float: none;
+        padding: 0;
+        border-left: 0;
+        text-align: left;
+    }
+
+    #customer.list div.innerWrap div.boardList div.board ul li a span.subject {
+        width: 100%;
+        margin: 3px 0 5px;
+        font-size: 14px;
+        color: #333;
+    }
+
+    #customer.list div.innerWrap div.boardList div.board ul li a span.secret {
+        padding: 2px 5px;
+    }
+
+    #customer.list div.innerWrap div.boardList div.board ul li a span.num {
+        display: none;
+    }
+
+    #customer.list div.innerWrap div.boardList div.board ul li a span.writer {
+        display: inline;
+        width: auto;
+        font-size: 13px;
+    }
+
+    #customer.list div.innerWrap div.boardList div.board ul li a span.date {
+        display: inline;
+        width: auto;
+        font-size: 12px;
+    }
+
+    #customer.list div.innerWrap div.boardList div.board ul li a span.date:before {
+        content: '\f274';
+        font-family: 'FontAwesome';
+        color: #75cad2;
+        margin-right: 5px;
+    }
+
+    #customer.list div.innerWrap div.control a {
+        font-size: 14px;
+        padding: 15px 30px;
+    }
+
+    #customer.detail div.innerWrap div.info div span.title {
+        float: none;
+        padding: 0;
+        border-right: 0;
+        margin-bottom: 5px;
+    }
+
+    #customer.detail div.innerWrap div.info div span.value {
+        float: none;
+        padding: 0;
+        font-size: 12px;
+        color: #999;
+    }
+
+    #customer.detail div.innerWrap div.info div.name {
+        float: none;
+        padding: 5px 10px;
+        border-right: 0;
+        border-bottom: 1px solid #ececec;
+    }
+
+    #customer.detail div.innerWrap div.info div.file {
+        float: none;
+        border-bottom: 1px solid #ececec;
+    }
+
+    #customer.detail div.innerWrap div.info div.file span.title {
+        padding: 5px 0 0 10px;
+    }
+
+    #customer.detail div.innerWrap div.info div.file span.value {
+        padding: 0 0 5px 10px;
+    }
+
+    #customer.detail div.innerWrap div.info div.file a {
+        display: inline-block;
+        float: none;
+        margin-bottom: 5px;
+    }
+
+    #customer.detail div.innerWrap div.info div.date {
+        float: none;
+        padding: 5px 10px;
+        border-left: 0;
+    }
+
+    #customer.detail div.innerWrap div.control button {
+        padding: 15px 40px;
+        font-size: 14px;
+    }
+
+    #customer.write div.innerWrap span.agreeDesc {
+        font-size: 12px;
+        color: #666;
+    }
+
+    #customer.write div.innerWrap div.agreeList div.item {
+        border-right: 0;
+        border-left: 0;
+    }
+
+    #customer.write div.innerWrap div.agreeList div.item div.itemBox {
+        float: none;
+        width: 100%;
+        padding: 10px;
+        border-left: 0;
+    }
+
+    #customer.write div.innerWrap div.agreeList div.item > label {
+        float: none;
+        width: 100%;
+        padding: 7px 10px;
+    }
+
+    #customer.write div.innerWrap div.agreeList div.item.required label {
+        position: relative;
+        padding: 7px 30px;
+        background: none;
+    }
+
+    #customer.write div.innerWrap div.agreeList div.item.required label:before {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: url('../images/sub/agreeCheck.svg') no-repeat center;
+        top: 7px;
+        left: 8px;
+    }
+
+    #customer.write div.innerWrap div.agreeList div.item span.label {
+        float: none;
+        width: 100%;
+        padding: 7px 10px;
+    }
+
+    #customer.write div.innerWrap div.agreeList div.item.required span.label {
+        position: relative;
+        padding: 7px 30px;
+        background: none;
+    }
+
+    #customer.write div.innerWrap div.agreeList div.item.required span.label:before {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: url('../images/sub/agreeCheck.svg') no-repeat center;
+        top: 7px;
+        left: 8px;
+    }
+
+    #customer.write div.innerWrap div.agreeList div.item div.itemBox input {
+        width: 100%;
+        height: 40px;
+    }
+
+    #customer.write div.innerWrap div.agreeList div.item div.itemBox .captcha {
+        width: 150px;
+    }
+
+    #customer.write div.innerWrap div.control {
+        margin-top: 40px;
+    }
+
+    #customer.write div.innerWrap div.control button {
+        width: 115px;
+        height: 45px;
+        font-size: 14px;
+        margin: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    #visual div.visualArea ul.visual li div.txtBox {
+        text-align: center;
+    }
+
+    #visual div.visualArea ul.visual li div.txtBox span.subject {
+        font-size: 24px;
+    }
+
+    #visual div.visualArea ul.visual li div.txtBox span.desc {
+        width: auto;
+    }
+
+    #visual div.visualArea ul.visual li a {
+        height: 250px;
+    }
+
+    #footer div.noticeBox div.innerNotice div.title {
+        display: none;
+    }
+
+    #footer div.noticeBox div.innerNotice div.noticeList {
+        width: calc(100% - 90px);
+    }
+
+    #subVisual div.innerWrap ul li div.txtBox span.title {
+        font-size: 24px;
+    }
+
+    #subVisual div.innerWrap ul li div.txtBox span.desc {
+        width: 350px;
+        font-size: 14px;
+    }
+
+    #group div.innerWrap div.mobile div.brench div.item {
+        width: 100%;
+        float: none;
+    }
+
+    #group div.innerWrap div.mobile div.brench div.item div.inner ul {
+        min-height: auto;
+    }
+
+    #vision div.innerWrap div.txtArea div.item div.list ul {
+        float: none;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #machine.list div.innerWrap div.item {
+        width: 100%;
+    }
+
+    #product div.detail div.innerWrap div.image {
+        height: 300px;
+    }
+
+    #product div.detail div.itemList div.value table.list {
+        font-size: 13px;
+    }
+
+    #product div.detail div.innerWrap div.item div.itemList {
+        margin-bottom: 40px;
+    }
+
+    #product div.detail div.innerWrap div.item div.itemList div.value div.kor {
+        margin-bottom: 30px;
+    }
+
+    #product div.detail div.innerWrap div.item div.itemList div.value div.kor ul li, #product div.detail div.innerWrap div.item div.itemList div.value div.eng ul li {
+        font-size: 13px;
+    }
+
+    div.cmtWrite form ul li.captcha div.antiSpam span.description {
+        margin-left: 0;
+        margin-top: 5px;
+        word-break: keep-all;
+    }
+
+    #d93CmtList {
+        padding: 10px;
+    }
+
+    #d93CmtList div.item {
+        padding-left: 0;
+        background: none;
+        margin-bottom: 10px;
+    }
+
+    #d93CmtList div.item:before {
+        width: 0;
+    }
+
+    #d93CmtList div.item div.content {
+        margin: 5px 0 0 0;
+    }
+
+    #d93CmtList div.item div.infor {
+        padding-left: 0;
+        padding-bottom: 10px;
+    }
+
+    #d93CmtList div.item div.content:before {
+        position: relative;
+    }
+
+    div.list div.innerWrap div.page span.devPage span.devPageBlock a {
+        width: 20px;
+        border: 0;
+        background-color: #fff;
+    }
+
+    div.list div.innerWrap div.page span.devPage > a {
+        width: 20px;
+        border: 0;
+    }
+
+    div.list div.innerWrap div.page span.devPage > a.devStartPage {
+        border-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    #visual div.visualArea ul.visual li div.txtBox span.subject {
+        font-size: 20px;
+    }
+
+    #subVisual {
+        height: 150px;
+    }
+
+    #subVisual div.innerWrap ul li div.txtBox {
+        top: 30px;
+    }
+
+    #subVisual div.innerWrap ul li div.txtBox span.title {
+        font-size: 20px;
+    }
+
+    #subVisual div.innerWrap ul li div.txtBox span.desc {
+        width: 300px;
+        font-size: 14px;
+    }
+
+    #vision div.innerWrap div.desc > span {
+        padding: 8px 40px;
+        font-size: 14px;
+    }
+
+    #product div.list div.innerWrap ul li {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+    #product div.detail div.innerWrap div.title {
+        font-size: 24px;
+    }
+
+    div.cmtWrite form div.info ul li label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    div.cmtWrite form ul li input#cmtEmail {
+        width: 250px;
+    }
+
+    div.cmtWrite form ul li.contents {
+        margin-bottom: 0;
+    }
+
+    div.cmtWrite form ul li textarea {
+        width: calc(100% - 100px);
+    }
+
+    div.cmtWrite form ul li button.submit {
+        width: 90px;
+        padding: 0 5px;
+    }
+
+    div.list div.boardSearch form div input {
+        width: 150px;
+    }
+
+    #customer.write div.innerWrap div.agreeZone div.innerAgree {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 320px) {
+}
+
+/*  */

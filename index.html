@@ -11,6 +11,19 @@
     <script src="./js/common.js"></script>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+
+    <style>
+         /* 기본 숨김 스타일 */
+        .cont_box {
+            display: none;
+        }
+        
+        /* 활성화 상태 (1번은 기본적으로 보이게 처리) */
+        .cont_box.active {
+            display: block;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -333,12 +346,19 @@
 
                 <h2>Prodect</h2>
                 
-                <div id="page01">
+                <div id="page01" class="group_cont">
                     <div class="pageTitle">
                         <div class="innerWrap">
                             <div class="title">
-                                <span class="sTitle">오일 로터리 펌프</span>
-                                <span class="mTitle">Oil Rotary Pump</span>
+                                <div class="">
+                                    <span class="sTitle">오일 로터리 펌프</span>
+                                    <span class="mTitle">Oil Rotary Pump</span>
+                                </div>
+
+                                <div class="btn_area">
+                                    <button class="menu_btn active" data-target=".cont_1_1">Oil Rotary Vane Pump</button>
+                                    <button class="menu_btn" data-target=".cont_1_2">Accessories</button>
+                                </div>
                             </div>
                             <!-- <div class="common">
                                 <span>global</span>
@@ -347,114 +367,91 @@
                             </div> -->
                         </div>
                     </div>
-                    <div id="product">
+                    <div id="product" class="cont_box cont_1_1 active">
                         <div class="list">
                             <div class="innerWrap">
                                 <ul>
                                     <li>
                                         <div class="box">
                                             <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="GHP-150K">
-                                                <img src="./img/prodect/oil_rotary_pump/ghp_150k.jpg" alt="GHP-150K">
                                                 <span class="name">GHP-150K</span>
                                             </a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="box">
-                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="GHP-150K">
-                                                <img src="./img/prodect/oil_rotary_pump/ghp_240k.jpg" alt="GHP-150K">
-                                                <!-- <img src="/img/prodect/oil_rotary_pump/ghp_150k.jpg" alt="GHP-150K"> -->
-                                                <span class="name">GHP-150K</span>
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_240k.html" class="thumb" title="GHP-240K">
+                                                <span class="name">GHP-240K</span>
                                             </a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="box">
-                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="GHP-150K">
-                                                <img src="./img/prodect/oil_rotary_pump/ghp_340k.jpg" alt="GHP-150K">
-                                                <!-- <img src="/img/prodect/oil_rotary_pump/ghp_150k.jpg" alt="GHP-150K"> -->
-                                                <span class="name">GHP-150K</span>
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_340k.html" class="thumb" title="GHP-340K">
+                                                <span class="name">GHP-340K</span>
                                             </a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="box">
-                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="GHP-150K">
-                                                <img src="./img/prodect/oil_rotary_pump/ghp_550k.jpg" alt="GHP-150K">
-                                                <!-- <img src="/img/prodect/oil_rotary_pump/ghp_150k.jpg" alt="GHP-150K"> -->
-                                                <span class="name">GHP-150K</span>
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_550k.html" class="thumb" title="GHP-550K">
+                                                <span class="name">GHP-550K</span>
                                             </a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="box">
-                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="GHP-150K">
-                                                <img src="./img/prodect/oil_rotary_pump/ghp_660k.jpg" alt="GHP-150K">
-                                                <!-- <img src="/img/prodect/oil_rotary_pump/ghp_150k.jpg" alt="GHP-150K"> -->
-                                                <span class="name">GHP-150K</span>
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_660k.html" class="thumb" title="GHP-660K">
+                                                <span class="name">GHP-660K</span>
                                             </a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="box">
-                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="GHP-150K">
-                                                <img src="./img/prodect/oil_rotary_pump/ghp_800k.jpg" alt="GHP-150K">
-                                                <!-- <img src="/img/prodect/oil_rotary_pump/ghp_150k.jpg" alt="GHP-150K"> -->
-                                                <span class="name">GHP-150K</span>
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_800k.html" class="thumb" title="GHP-800K">
+                                                <span class="name">GHP-800K</span>
                                             </a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="box">
-                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="GHP-150K">
-                                                <img src="./img/prodect/oil_rotary_pump/ghp_1000k.jpg" alt="GHP-150K">
-                                                <!-- <img src="/img/prodect/oil_rotary_pump/ghp_150k.jpg" alt="GHP-150K"> -->
-                                                <span class="name">GHP-150K</span>
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_1000k.html" class="thumb" title="GHP-1000K">
+                                                <span class="name">GHP-1000K</span>
                                             </a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="box">
-                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="GHP-150K">
-                                                <img src="./img/prodect/oil_rotary_pump/ghp_1300k.jpg" alt="GHP-150K">
-                                                <!-- <img src="/img/prodect/oil_rotary_pump/ghp_150k.jpg" alt="GHP-150K"> -->
-                                                <span class="name">GHP-150K</span>
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_1300k.html" class="thumb" title="GHP-1300K">
+                                                <span class="name">GHP-1300K</span>
                                             </a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="box">
-                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="GHP-150K">
-                                                <img src="./img/prodect/oil_rotary_pump/ghp_1600k.jpg" alt="GHP-150K">
-                                                <!-- <img src="/img/prodect/oil_rotary_pump/ghp_150k.jpg" alt="GHP-150K"> -->
-                                                <span class="name">GHP-150K</span>
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_1600k.html" class="thumb" title="GHP-1600K">
+                                                <span class="name">GHP-1600K</span>
                                             </a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="box">
-                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="GHP-150K">
-                                                <img src="./img/prodect/oil_rotary_pump/ghp_3500d.jpg" alt="GHP-150K">
-                                                <!-- <img src="/img/prodect/oil_rotary_pump/ghp_150k.jpg" alt="GHP-150K"> -->
-                                                <span class="name">GHP-150K</span>
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_3500d.html" class="thumb" title="GHP-3500D">
+                                                <span class="name">GHP-3500D</span>
                                             </a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="box">
-                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="GHP-150K">
-                                                <img src="./img/prodect/oil_rotary_pump/ghp_6000d.jpg" alt="GHP-150K">
-                                                <!-- <img src="/img/prodect/oil_rotary_pump/ghp_150k.jpg" alt="GHP-150K"> -->
-                                                <span class="name">GHP-150K</span>
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_6000d.html" class="thumb" title="GHP-6000D">
+                                                <span class="name">GHP-6000D</span>
                                             </a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="box">
-                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="GHP-150K">
-                                                <img src="./img/prodect/oil_rotary_pump/ghp_10000s.jpg" alt="GHP-150K">
-                                                <!-- <img src="/img/prodect/oil_rotary_pump/ghp_150k.jpg" alt="GHP-150K"> -->
-                                                <span class="name">GHP-150K</span>
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_10000s.html" class="thumb" title="GHP-10000S">
+                                                <span class="name">GHP-10000S</span>
                                             </a>
                                         </div>
                                     </li>
@@ -475,8 +472,100 @@
                             </div>
                         </div>
                     </div>
+                    <div id="product" class="cont_box cont_1_2">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="수분포집용 트랩">
+                                                <span class="name">수분포집용 트랩</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="파우더용 흡기 트랩">
+                                                <span class="name">파우더용 흡기 트랩</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="유수분리기">
+                                                <span class="name">유수분리기</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="OIL MIST TRAP-GHP-150/240/340">
+                                                <span class="name">OIL MIST TRAP-GHP-150/240/340</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="OIL MIST TRAP-GHP-550">
+                                                <span class="name">OIL MIST TRAP-GHP-550</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="OIL MIST TRAP-GHP-800/1000">
+                                                <span class="name">OIL MIST TRAP-GHP-800/1000</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="OIL MIST TRAP-GHP-1300">
+                                                <span class="name">OIL MIST TRAP-GHP-1300</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="OIL MIST TRAP-GHP-1600">
+                                                <span class="name">OIL MIST TRAP-GHP-1600</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="OIL MIST TRAP-GHP-3500/6000">
+                                                <span class="name">OIL MIST TRAP-GHP-3500/6000</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="OUTLET NOZZLE(NW TYPE)">
+                                                <span class="name">OUTLET NOZZLE(NW TYPE)</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="OUTLET NOZZLE">
+                                                <span class="name">OUTLET NOZZLE</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="INLET NOZZLE">
+                                                <span class="name">INLET NOZZLE</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div id="page02">
+                <div id="page02" class="group_cont">
                     <div class="pageTitle">
                         <div class="innerWrap">
                             <div class="title">
@@ -485,11 +574,30 @@
                             </div>
                         </div>
                     </div>
-                    <div id="product">
-
+                    <div id="product" class="cont_box cont_2_1 active">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="GRP-180">
+                                                <span class="name">GRP-180</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="GRP-300N">
+                                                <span class="name">GRP-300N</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="page03">
+                <div id="page03" class="group_cont">
                     <div class="pageTitle">
                         <div class="innerWrap">
                             <div class="title">
@@ -498,11 +606,37 @@
                             </div>
                         </div>
                     </div>
-                    <div id="product">
-                        
+                    <div id="product" class="cont_box cont_3_1 active">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="KRP-4500">
+                                                <span class="name">KRP-4500</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="KRP-8000N">
+                                                <span class="name">KRP-8000N</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="KRP-15000">
+                                                <span class="name">KRP-15000</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="page04">
+                <div id="page04" class="group_cont">
                     <div class="pageTitle">
                         <div class="innerWrap">
                             <div class="title">
@@ -511,86 +645,831 @@
                             </div>
                         </div>
                     </div>
-                    <div id="product">
-                        
-                    </div>
-                </div>
-                <div id="page05">
-                    <div class="pageTitle">
-                        <div class="innerWrap">
-                            <div class="title">
-                                <span class="sTitle">오일 디퓨전 펌프</span>
-                                <span class="mTitle">Oil Diffusion Pump</span>
+                    <div id="product" class="cont_box cont_4_1 active">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="KBP-100">
+                                                <span class="name">KBP-100</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="KBP-300">
+                                                <span class="name">KBP-300</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="KBP-600">
+                                                <span class="name">KBP-600</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="KBP-1200N">
+                                                <span class="name">KBP-1200N</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="KBP-2700">
+                                                <span class="name">KBP-2700</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="KBP-3800">
+                                                <span class="name">KBP-3800</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div id="product">
-                        
-                    </div>
                 </div>
-                <div id="page06">
+                <div id="page05" class="group_cont">
                     <div class="pageTitle">
                         <div class="innerWrap">
                             <div class="title">
-                                <span class="sTitle">밸브</span>
-                                <span class="mTitle">Valves</span>
+                                <div class="">
+                                    <span class="sTitle">오일 디퓨전 펌프</span>
+                                    <span class="mTitle">Oil Diffusion Pump</span>
+                                </div>
+
+                                <div class="btn_area">
+                                    <button class="menu_btn active" data-target=".cont_5_1">Oil Diffusion Pump</button>
+                                    <button class="menu_btn" data-target=".cont_5_2">Accessories</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div id="product">
-                        
+                    <div id="product" class="cont_box cont_5_1 active">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="DPF-4Z">
+                                                <span class="name">DPF-4Z</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="DPF-4ZA">
+                                                <span class="name">DPF-4ZA</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="DPF-6Z">
+                                                <span class="name">DPF-6Z</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="DPF-8Z">
+                                                <span class="name">DPF-8Z</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="DPF-10Z">
+                                                <span class="name">DPF-10Z</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="DPF-14Z">
+                                                <span class="name">DPF-14Z</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="DPF-22ZQ">
+                                                <span class="name">DPF-22ZQ</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="DPF-28ZQ">
+                                                <span class="name">DPF-28ZQ</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="DPF-36ZQ">
+                                                <span class="name">DPF-36ZQ</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product" class="cont_box cont_5_2">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="확산펌프 오일">
+                                                <span class="name">확산펌프 오일</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="Air Cooled Baffle">
+                                                <span class="name">Air Cooled Baffle</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="LN2 Cold Trap">
+                                                <span class="name">LN2 Cold Trap</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="Water Cooled Baffle">
+                                                <span class="name">Water Cooled Baffle</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="page07">
+                <div id="page06" class="group_cont">
                     <div class="pageTitle">
                         <div class="innerWrap">
                             <div class="title">
-                                <span class="sTitle">플랜지</span>
-                                <span class="mTitle">Flange</span>
+                                <div class="">
+                                    <span class="sTitle">밸브</span>
+                                    <span class="mTitle">Valves</span>
+                                </div>
+                                
+                                <div class="btn_area">
+                                    <button class="menu_btn active" data-target=".cont_6_1">Angle</button>
+                                    <button class="menu_btn" data-target=".cont_6_2">Auto Vent</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div id="product">
-                        
+                    <div id="product" class="cont_box cont_6_1 active">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="LUAVB TYPE">
+                                                <span class="name">LUAVB TYPE</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="LUVB-TYPE">
+                                                <span class="name">LUVB-TYPE</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="LCAV TYPE">
+                                                <span class="name">LCAV TYPE</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="LCVB-TYPE">
+                                                <span class="name">LCVB-TYPE</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="LCV TYPE">
+                                                <span class="name">LCV TYPE</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="LAV TYPE">
+                                                <span class="name">LAV TYPE</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="LV TYPE">
+                                                <span class="name">LV TYPE</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="SUS BALL VALVE">
+                                                <span class="name">SUS BALL VALVE</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product" class="cont_box cont_6_2">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="LCLV TYPE">
+                                                <span class="name">LCLV TYPE</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="page08">
+                <div id="page07" class="group_cont">
                     <div class="pageTitle">
                         <div class="innerWrap">
                             <div class="title">
-                                <span class="sTitle">피팅</span>
-                                <span class="mTitle">Fitting</span>
+                                <div class="">
+                                    <span class="sTitle">플랜지</span>
+                                    <span class="mTitle">Flange</span>
+                                </div>
+
+                                <div class="btn_area">
+                                    <button class="menu_btn active" data-target=".cont_7_1">CF Flange</button>
+                                    <button class="menu_btn" data-target=".cont_7_2">NW Flange</button>
+                                    <button class="menu_btn" data-target=".cont_7_3">ISO Flange</button>
+                                    <button class="menu_btn" data-target=".cont_7_4">JIS Flange</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div id="product">
-                        
+                    <div id="product" class="cont_box cont_7_1 active">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="CF ROTABLE BORED FLANGES">
+                                                <span class="name">CF ROTABLE BORED FLANGES</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="CF NON ROTATABLE BORED FLANGE">
+                                                <span class="name">CF NON ROTATABLE BORED FLANGE</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="CF ROTATABLE BLANK FLANGES">
+                                                <span class="name">CF ROTATABLE BLANK FLANGES</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="CF NON ROTATABLE BLANK FLANGES">
+                                                <span class="name">CF NON ROTATABLE BLANK FLANGES</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="CF-DOUBLE-SIDE-FLANGES">
+                                                <span class="name">CF-DOUBLE-SIDE-FLANGES</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product" class="cont_box cont_7_2">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="NW SOCKET FLANGES">
+                                                <span class="name">NW SOCKET FLANGES</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product" class="cont_box cont_7_3">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="ISO BLANK FLANGES">
+                                                <span class="name">ISO BLANK FLANGES</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="ISO BORED FLANGES">
+                                                <span class="name">ISO BORED FLANGES</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product" class="cont_box cont_7_4">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="NON ROTATABLE VF BORED FLANGES">
+                                                <span class="name">NON ROTATABLE VF BORED FLANGES</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="NON ROTATABLE VG BORED FLANGES">
+                                                <span class="name">NON ROTATABLE VG BORED FLANGES</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="page09">
+                <div id="page08" class="group_cont">
                     <div class="pageTitle">
                         <div class="innerWrap">
                             <div class="title">
-                                <span class="sTitle">게이지</span>
-                                <span class="mTitle">Gauge</span>
+                                <div class="">
+                                    <span class="sTitle">피팅</span>
+                                    <span class="mTitle">Fitting</span>
+                                </div>
+
+                                <div class="btn_area">
+                                    <button class="menu_btn active" data-target=".cont_8_1">CF Flange Fitting</button>
+                                    <button class="menu_btn" data-target=".cont_8_2">NW Flange Fitting</button>
+                                    <button class="menu_btn" data-target=".cont_8_3">ISO Flange Fitting</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div id="product">
-                        
+                    <div id="product" class="cont_box cont_8_1 active">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="CF COPPER GASKETS">
+                                                <span class="name">CF COPPER GASKETS</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product" class="cont_box cont_8_2">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="NW QUICK CLAMPS">
+                                                <span class="name">NW QUICK CLAMPS</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="NW CENTER RINGS">
+                                                <span class="name">NW CENTER RINGS</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="NW FLEXIBLE TUBES">
+                                                <span class="name">NW FLEXIBLE TUBES</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="NW 4-WAYS">
+                                                <span class="name">NW 4-WAYS</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="NW 90˚ RADIOUS ELBOWS">
+                                                <span class="name">NW 90˚ RADIOUS ELBOWS</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="NW HALF NIPPLES">
+                                                <span class="name">NW HALF NIPPLES</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product" class="cont_box cont_8_3">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="ISO CENTER RINGS">
+                                                <span class="name">ISO CENTER RINGS</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="ISO DOUBLE CLAW CLAMPS">
+                                                <span class="name">ISO DOUBLE CLAW CLAMPS</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="ISO SINGLE CLAW CLAMPS">
+                                                <span class="name">ISO SINGLE CLAW CLAMPS</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="page10">
+                <div id="page09" class="group_cont">
                     <div class="pageTitle">
                         <div class="innerWrap">
                             <div class="title">
-                                <span class="sTitle">시스템</span>
-                                <span class="mTitle">System</span>
+                                <div class="">
+                                    <span class="sTitle">게이지</span>
+                                    <span class="mTitle">Gauge</span>
+                                </div>
+
+                                <div class="btn_area">
+                                    <button class="menu_btn active" data-target=".cont_9_1">Transducer</button>
+                                    <button class="menu_btn" data-target=".cont_9_2">Pirani</button>
+                                    <button class="menu_btn" data-target=".cont_9_3">Penning</button>
+                                    <button class="menu_btn" data-target=".cont_9_4">Ionization</button>
+                                    <button class="menu_btn" data-target=".cont_9_5">Combination</button>
+                                    <button class="menu_btn" data-target=".cont_9_6">Tube</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div id="product">
-                        
+                    <div id="product" class="cont_box cont_9_1 active">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="TR-1DB">
+                                                <span class="name">TR-1DB</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="FTR-1">
+                                                <span class="name">FTR-1</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product" class="cont_box cont_9_2">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="PT-3P(M)">
+                                                <span class="name">PT-3P(M)</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="PT-9P(M)">
+                                                <span class="name">PT-9P(M)</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="PT-4P">
+                                                <span class="name">PT-4P</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="PT-3DA">
+                                                <span class="name">PT-3DA</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="PC-615N">
+                                                <span class="name">PC-615N</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product" class="cont_box cont_9_3">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="CT-2PM">
+                                                <span class="name">CT-2PM</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="CT-3DA">
+                                                <span class="name">CT-3DA</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product" class="cont_box cont_9_4">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="IT-3DA">
+                                                <span class="name">IT-3DA</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="IT-10P">
+                                                <span class="name">IT-10P</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="IT-L20P">
+                                                <span class="name">IT-L20P</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product" class="cont_box cont_9_5">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="PC3DA">
+                                                <span class="name">PC3DA</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="TRPC-10">
+                                                <span class="name">TRPC-10</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product" class="cont_box cont_9_6">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="PSG-1">
+                                                <span class="name">PSG-1</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="page10" class="group_cont">
+                    <div class="pageTitle">
+                        <div class="innerWrap">
+                            <div class="title">
+                                <div class="">
+                                    <span class="sTitle">시스템</span>
+                                    <span class="mTitle">System</span>
+                                </div>
+
+                                <div class="btn_area">
+                                    <button class="menu_btn active" data-target=".cont_10_1">Combination Exhaust</button>
+                                    <button class="menu_btn" data-target=".cont_10_2">Sputtering</button>
+                                    <button class="menu_btn" data-target=".cont_10_3">Evaporation</button>
+                                    <button class="menu_btn" data-target=".cont_10_4">Center Valve Type Sealing Equipment</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product" class="cont_box cont_10_1 active">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="KBP-300 / GHP-800K">
+                                                <span class="name">KBP-300 / GHP-800K</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="KBP-600 / GHP-1300K">
+                                                <span class="name">KBP-600 / GHP-1300K</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="KBP-1200 / GHP-3500D">
+                                                <span class="name">KBP-1200 / GHP-3500D</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="KBP-2700 / GHP-6000D">
+                                                <span class="name">KBP-2700 / GHP-6000D</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="KBP-2700 / KRP-4500">
+                                                <span class="name">KBP-2700 / KRP-4500</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="KBP-2700 / KRP-8000">
+                                                <span class="name">KBP-2700 / KRP-8000</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="KBP-3800 / GHP-10000S">
+                                                <span class="name">KBP-3800 / GHP-10000S</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product" class="cont_box cont_10_2">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="GAIA-30S">
+                                                <span class="name">GAIA-30S</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="GAIA-60S">
+                                                <span class="name">GAIA-60S</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="GAIA-75E">
+                                                <span class="name">GAIA-75E</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="GAIA-80C">
+                                                <span class="name">GAIA-80C</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="GAIA-140S">
+                                                <span class="name">GAIA-140S</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product" class="cont_box cont_10_3">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="Evaporation System">
+                                                <span class="name">Evaporation System</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="product" class="cont_box cont_10_4">
+                        <div class="list">
+                            <div class="innerWrap">
+                                <ul>
+                                    <li>
+                                        <div class="box">
+                                            <a href="./html/main_detail/oil_rotary_pump/ghp_150k.html" class="thumb" title="CENTER VALVE TYPE SEALLING EQUIPMENT">
+                                                <span class="name">CENTER VALVE TYPE SEALLING EQUIPMENT</span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -643,6 +1522,32 @@
                     $(function() {
                         NoticeInit();
                         $('button.goTop').click(GotoTop);
+                    });
+
+                    // 페이지 내의 모든 메뉴 버튼을 가져옵니다. kji
+                    const buttons = document.querySelectorAll('.menu_btn');
+
+                    buttons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            // 1. 클릭된 버튼의 가장 가까운 부모 그룹(.group_cont)을 찾습니다.
+                            const currentGroup = button.closest('.group_cont');
+                            
+                            // 2. 버튼에 지정된 타겟 클래스명(.content-1 또는 .content-2)을 가져옵니다.
+                            const targetSelector = button.getAttribute('data-target');
+                            
+                            // 3. 🚨 중요: 전체 문서가 아니라 '현재 그룹 안에서만' 요소를 찾습니다.
+                            const targetBox = currentGroup.querySelector(targetSelector);
+                            const allBoxesInGroup = currentGroup.querySelectorAll('.cont_box');
+                            const allButtonsInGroup = currentGroup.querySelectorAll('.menu_btn');
+
+                            // 4. 현재 그룹 내의 모든 콘텐츠와 버튼 활성화 클래스를 지웁니다.
+                            allBoxesInGroup.forEach(box => box.classList.remove('active'));
+                            allButtonsInGroup.forEach(btn => btn.classList.remove('active'));
+
+                            // 5. 클릭된 버튼과 매칭되는 콘텐츠만 활성화합니다.
+                            button.classList.add('active');
+                            targetBox.classList.add('active');
+                        });
                     });
                 </script>
             </div>

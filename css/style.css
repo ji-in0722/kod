@@ -40,18 +40,48 @@
 #header {
     height: 92px;
     border-bottom: 1px solid #ececec;
+    padding: 0 35px;
 }
 
 #header div.innerWrap {
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 
-#header div.innerWrap h1 {
+#header div.innerWrap a {
+    position: relative;
+    padding: 27px 0;
+}
+
+#header div.innerWrap .visual_logo {
+    position: absolute;
+    left: -20%;
+    top: 30%;
+    width: 36px;
+    /* left: 14%;
+    top: 15%;
+    width: 70px;
+    animation: rotate_image 50s linear infinite; */
+    transform-origin: 50% 50%;
+    opacity: 30%;
+}
+
+@keyframes rotate_image {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* #header div.innerWrap h1 {
     display: block;
     float: left;
     padding: 22px 0;
-}
+} */
 
 #header div.innerWrap div.sideBtn {
     display: none;
@@ -280,36 +310,45 @@ body.padActive #gnb ul.navi.depth1 > li > a.active {
 }
 
 /* ë©”ì¸íŽ˜ì´ì§€ */
-#visual {
+/* #visual {
     width: 100%;
     height: 618px;
     background: url('../img/main/backVisual.jpg') no-repeat center;
     background-size: cover;
-}
+} */
 
-#visual div.visualArea {
+/* #visual div.visualArea {
     position: relative;
     max-width: 1200px;
     height: 100%;
     margin: 0 auto;
     padding-top: 50px;
+} */
+
+#visual {
+    max-width: 1200px;
+    margin: 40px auto 0;
 }
 
 #visual div.visualArea ul.visual {
-    position: relative;
+    /* kji */
+    /* position: relative; */
     height: 100%;
 }
 
 #visual div.visualArea ul.visual li {
-    position: absolute;
+    /* kji */
+    /* position: absolute; */
     width: 100%;
     height: 100%;
-    left: 0;
-    top: 0;
+    /* left: 0;
+    top: 0; */
+    position: relative;
 }
 
 #visual div.visualArea ul.visual li div.txtBox {
-    position: absolute;
+    /* kji */
+    /* position: absolute; */
     top: 0;
     left: 0;
 }
@@ -440,26 +479,80 @@ body.padActive #gnb ul.navi.depth1 > li > a.active {
 }
 
 /* kji */
-/* #visual .mainVisualImg {height: 100%;}
-#visual .mainVisualImg .img01 {
+/* #visual .mainVisualImg .img01 {
     background: url(../img/main/main_img.png) no-repeat 0 170px;
     width: 708px;
     height: 100%;
     margin: 0 auto;
 } */
 
+#visual .mainVisualImg {}
+
 #contents {
 }
 
 #footer {
+    position: relative;
     background-color: #f8f9f7;
 }
 
 #footer div.noticeBox {
+    position: fixed;
+    right: 0;
+    bottom: 0;
     padding: 15px 0;
-    border-bottom: 1px solid #dcdcdc;
+    width: 100%;
+    text-align: center;
+    /* border-bottom: 1px solid #dcdcdc;
     border-top: 1px solid #e7e7e8;
-    background-color: #fff;
+    background-color: #fff; */
+}
+
+#footer div.noticeBox .goTop button {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+#footer div.noticeBox .goTop button:hover {
+    border-color: #bcbcbc;
+}
+
+#footer div.noticeBox .goTop button::before {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 25px;
+    background-color: #ddd;
+    position: absolute;
+    top: 12px;
+    left: 23px;
+}
+
+#footer div.noticeBox .goTop button span::before {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 13px;
+    background-color: #ddd;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 11px;
+    left: 18px;
+}
+
+#footer div.noticeBox .goTop button span::after {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 13px;
+    background-color: #ddd;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 11px;
+    left: 28px;
 }
 
 #footer div.noticeBox div.innerNotice {
@@ -852,10 +945,16 @@ div.mobileDep3 {
 
 #container.sub {
     padding: 40px 0 80px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 #container.sub div.content {
     padding-top: 70px;
+}
+
+#container div.group_cont ~ div.group_cont {
+    margin-top: 20px;
 }
 
 #container div.pageTitle {
@@ -876,28 +975,47 @@ div.mobileDep3 {
 #container div.pageTitle div.innerWrap div.title {
     float: left;
     padding-bottom: 20px;
-    /* kji */
-    display: flex;
-    align-items: flex-end;
+    max-width: 100%;
 }
 
 /* kji */
 #container div.pageTitle div.innerWrap div.title .btn_area {
-    margin-left: 30px;
+    /* margin-left: 30px; */
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 4px;
 }
 
-#container div.pageTitle div.innerWrap div.title span {
-    display: block;
+#container div.pageTitle div.innerWrap div.title .btn_area::-webkit-scrollbar {
+  display: none;
+}
+
+#container div.pageTitle div.innerWrap div.title .btn_area button {
+    font-size: 14px;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+#container div.pageTitle div.innerWrap div.title .btn_area button:hover {
+    border-color: #666;
+}
+
+#container div.pageTitle div.innerWrap div.title .h_title div {
     font-weight: 600;
 }
 
-#container div.pageTitle div.innerWrap div.title span.sTitle {
-    font-size: 18px;
+#container div.pageTitle div.innerWrap div.title .h_title .sTitle {
+    font-size: 24px;
     color: #666;
 }
 
-#container div.pageTitle div.innerWrap div.title span.mTitle {
-    font-size: 48px;
+#container div.pageTitle div.innerWrap div.title .h_title .mTitle {
+    /* font-size: 48px; */
+    /* kji */
+    font-size: 24px;
     letter-spacing: -0.01em;
 }
 
@@ -1683,7 +1801,9 @@ div.greet div.imageBox1 div.innerWrap span.thumb1 img {
     float: left;
     width: 25%;
     padding: 0 10px;
-    margin-bottom: 70px;
+    /* kji */
+    /* margin-bottom: 70px; */
+    margin-bottom: 20px;
 }
 
 #product div.list div.innerWrap ul li div.box {
@@ -1693,9 +1813,13 @@ div.greet div.imageBox1 div.innerWrap span.thumb1 img {
 }
 
 #product div.list div.innerWrap ul li div.box a.thumb {
-    display: block;
+    /* display: block; */
     /* height: 100%; */
-    height: 200px;
+    /* height: 200px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    aspect-ratio: 620 / 520;
     padding: 10px;
     border: 1px solid #ececec;
     transition: all .2s ease-in-out;
@@ -1714,7 +1838,9 @@ div.greet div.imageBox1 div.innerWrap span.thumb1 img {
 } */
 
 #product div.list div.innerWrap ul li div.box a.thumb:hover {
-    border: 1px solid #315FC4;
+    /* kji */
+    /* border: 1px solid #315FC4; */
+    border: 1px solid #666;
 }
 
 /* #product div.list div.innerWrap ul li div.box a:hover span.name { text-decoration: underline; } */
@@ -1723,7 +1849,7 @@ div.greet div.imageBox1 div.innerWrap span.thumb1 img {
     text-align: center;
     /* kji
     margin-top: 10px; */
-    padding-top: 150px;
+    /* padding-top: 150px; */
 
     font-weight: 600;
     font-size: 14px;
@@ -1736,354 +1862,352 @@ div.greet div.imageBox1 div.innerWrap span.thumb1 img {
 #product div.list div.innerWrap ul li div.box a {
     background-size: contain;
     background-repeat: no-repeat;
-    background-position-y: -15px;
 }
 
-#product.cont_1_1 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_1_1 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/ghp_150k.jpg);
 }
-#product.cont_1_1 div.list div.innerWrap ul li:nth-child(2) div.box a {
+#product .cont_1_1 div.list div.innerWrap ul li:nth-child(2) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/ghp_240k.jpg);
 }
-#product.cont_1_1 div.list div.innerWrap ul li:nth-child(3) div.box a {
+#product .cont_1_1 div.list div.innerWrap ul li:nth-child(3) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/ghp_340k.jpg);
 }
-#product.cont_1_1 div.list div.innerWrap ul li:nth-child(4) div.box a {
+#product .cont_1_1 div.list div.innerWrap ul li:nth-child(4) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/ghp_550k.jpg);
 }
-#product.cont_1_1 div.list div.innerWrap ul li:nth-child(5) div.box a {
+#product .cont_1_1 div.list div.innerWrap ul li:nth-child(5) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/ghp_660k.jpg);
 }
-#product.cont_1_1 div.list div.innerWrap ul li:nth-child(6) div.box a {
+#product .cont_1_1 div.list div.innerWrap ul li:nth-child(6) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/ghp_800k.jpg);
 }
-#product.cont_1_1 div.list div.innerWrap ul li:nth-child(7) div.box a {
+#product .cont_1_1 div.list div.innerWrap ul li:nth-child(7) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/ghp_1000k.jpg);
 }
-#product.cont_1_1 div.list div.innerWrap ul li:nth-child(8) div.box a {
+#product .cont_1_1 div.list div.innerWrap ul li:nth-child(8) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/ghp_1300k.jpg);
 }
-#product.cont_1_1 div.list div.innerWrap ul li:nth-child(9) div.box a {
+#product .cont_1_1 div.list div.innerWrap ul li:nth-child(9) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/ghp_1600k.jpg);
 }
-#product.cont_1_1 div.list div.innerWrap ul li:nth-child(10) div.box a {
+#product .cont_1_1 div.list div.innerWrap ul li:nth-child(10) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/ghp_3500d.jpg);
 }
-#product.cont_1_1 div.list div.innerWrap ul li:nth-child(11) div.box a {
+#product .cont_1_1 div.list div.innerWrap ul li:nth-child(11) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/ghp_6000d.jpg);
 }
-#product.cont_1_1 div.list div.innerWrap ul li:nth-child(12) div.box a {
+#product .cont_1_1 div.list div.innerWrap ul li:nth-child(12) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/ghp_10000s.jpg);
 }
 
-#product.cont_1_2 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_1_2 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/acc/moisture_collection_trap.jpg);
 }
-#product.cont_1_2 div.list div.innerWrap ul li:nth-child(2) div.box a {
+#product .cont_1_2 div.list div.innerWrap ul li:nth-child(2) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/acc/suction_powder_trap.jpg);
 }
-#product.cont_1_2 div.list div.innerWrap ul li:nth-child(3) div.box a {
+#product .cont_1_2 div.list div.innerWrap ul li:nth-child(3) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/acc/oil_water_separator.jpg);
 }
-#product.cont_1_2 div.list div.innerWrap ul li:nth-child(4) div.box a {
+#product .cont_1_2 div.list div.innerWrap ul li:nth-child(4) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/acc/oil_mist_trap_ghp_150_240_340.jpg);
 }
-#product.cont_1_2 div.list div.innerWrap ul li:nth-child(5) div.box a {
+#product .cont_1_2 div.list div.innerWrap ul li:nth-child(5) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/acc/oil_mist_trap_ghp_550.jpg);
 }
-#product.cont_1_2 div.list div.innerWrap ul li:nth-child(6) div.box a {
+#product .cont_1_2 div.list div.innerWrap ul li:nth-child(6) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/acc/oil_mist_trap_ghp_800_1000.jpg);
 }
-#product.cont_1_2 div.list div.innerWrap ul li:nth-child(7) div.box a {
+#product .cont_1_2 div.list div.innerWrap ul li:nth-child(7) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/acc/oil_mist_trap_ghp_1300.jpg);
 }
-#product.cont_1_2 div.list div.innerWrap ul li:nth-child(8) div.box a {
+#product .cont_1_2 div.list div.innerWrap ul li:nth-child(8) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/acc/oil_mist_trap_ghp_1600.jpg);
 }
-#product.cont_1_2 div.list div.innerWrap ul li:nth-child(9) div.box a {
+#product .cont_1_2 div.list div.innerWrap ul li:nth-child(9) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/acc/oil_mist_trap_ghp_3500_6000.jpg);
 }
-#product.cont_1_2 div.list div.innerWrap ul li:nth-child(10) div.box a {
+#product .cont_1_2 div.list div.innerWrap ul li:nth-child(10) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/acc/outlet_nozzle_nw_type.jpg);
 }
-#product.cont_1_2 div.list div.innerWrap ul li:nth-child(11) div.box a {
+#product .cont_1_2 div.list div.innerWrap ul li:nth-child(11) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/acc/outlet_nozzle.jpg);
 }
-#product.cont_1_2 div.list div.innerWrap ul li:nth-child(12) div.box a {
+#product .cont_1_2 div.list div.innerWrap ul li:nth-child(12) div.box a {
     background-image: url(../img/prodect/01_oil_rotary_pump/acc/inlet_nozzle.jpg);
 }
 
-#product.cont_2_1 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_2_1 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/02_belt_driven_rotary_vane_pump/grp_180.jpg);
 }
-#product.cont_2_1 div.list div.innerWrap ul li:nth-child(2) div.box a {
+#product .cont_2_1 div.list div.innerWrap ul li:nth-child(2) div.box a {
     background-image: url(../img/prodect/02_belt_driven_rotary_vane_pump/grp_300n.jpg);
 }
 
-#product.cont_3_1 div.list div.innerWrap ul li:nth-child(1) div.box a {
-    background-image: url(../img/prodect/03_piston_rotary_pump/krp_4500.png);
+#product .cont_3_1 div.list div.innerWrap ul li:nth-child(1) div.box a {
+    background-image: url(../img/prodect/03_piston_rotary_pump/krp_4500.jpg);
 }
-#product.cont_3_1 div.list div.innerWrap ul li:nth-child(2) div.box a {
-    background-image: url(../img/prodect/03_piston_rotary_pump/krp_8000n.png);
+#product .cont_3_1 div.list div.innerWrap ul li:nth-child(2) div.box a {
+    background-image: url(../img/prodect/03_piston_rotary_pump/krp_8000n.jpg);
 }
-#product.cont_3_1 div.list div.innerWrap ul li:nth-child(3) div.box a {
-    background-image: url(../img/prodect/03_piston_rotary_pump/krp_15000.png);
+#product .cont_3_1 div.list div.innerWrap ul li:nth-child(3) div.box a {
+    background-image: url(../img/prodect/03_piston_rotary_pump/krp_15000.jpg);
 }
 
-#product.cont_4_1 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_4_1 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/04_mechanical_booster_pump/kbp_100.jpg);
 }
-#product.cont_4_1 div.list div.innerWrap ul li:nth-child(2) div.box a {
+#product .cont_4_1 div.list div.innerWrap ul li:nth-child(2) div.box a {
     background-image: url(../img/prodect/04_mechanical_booster_pump/kbp_300.jpg);
 }
-#product.cont_4_1 div.list div.innerWrap ul li:nth-child(3) div.box a {
+#product .cont_4_1 div.list div.innerWrap ul li:nth-child(3) div.box a {
     background-image: url(../img/prodect/04_mechanical_booster_pump/kbp_600.jpg);
 }
-#product.cont_4_1 div.list div.innerWrap ul li:nth-child(4) div.box a {
+#product .cont_4_1 div.list div.innerWrap ul li:nth-child(4) div.box a {
     background-image: url(../img/prodect/04_mechanical_booster_pump/kbp_1200n.jpg);
 }
-#product.cont_4_1 div.list div.innerWrap ul li:nth-child(5) div.box a {
+#product .cont_4_1 div.list div.innerWrap ul li:nth-child(5) div.box a {
     background-image: url(../img/prodect/04_mechanical_booster_pump/kbp_2700.jpg);
 }
-#product.cont_4_1 div.list div.innerWrap ul li:nth-child(6) div.box a {
+#product .cont_4_1 div.list div.innerWrap ul li:nth-child(6) div.box a {
     background-image: url(../img/prodect/04_mechanical_booster_pump/kbp_3800.jpg);
 }
 
-#product.cont_5_1 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_5_1 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/05_0il_diffusion_pump/dpf_4z.jpg);
 }
-#product.cont_5_1 div.list div.innerWrap ul li:nth-child(2) div.box a {
+#product .cont_5_1 div.list div.innerWrap ul li:nth-child(2) div.box a {
     background-image: url(../img/prodect/05_0il_diffusion_pump/dpf_4za.jpg);
 }
-#product.cont_5_1 div.list div.innerWrap ul li:nth-child(3) div.box a {
+#product .cont_5_1 div.list div.innerWrap ul li:nth-child(3) div.box a {
     background-image: url(../img/prodect/05_0il_diffusion_pump/dpf_6z.jpg);
 }
-#product.cont_5_1 div.list div.innerWrap ul li:nth-child(4) div.box a {
+#product .cont_5_1 div.list div.innerWrap ul li:nth-child(4) div.box a {
     background-image: url(../img/prodect/05_0il_diffusion_pump/dpf_8z.jpg);
 }
-#product.cont_5_1 div.list div.innerWrap ul li:nth-child(5) div.box a {
+#product .cont_5_1 div.list div.innerWrap ul li:nth-child(5) div.box a {
     background-image: url(../img/prodect/05_0il_diffusion_pump/dpf_10z.jpg);
 }
-#product.cont_5_1 div.list div.innerWrap ul li:nth-child(6) div.box a {
+#product .cont_5_1 div.list div.innerWrap ul li:nth-child(6) div.box a {
     background-image: url(../img/prodect/05_0il_diffusion_pump/dpf_14z.jpg);
 }
-#product.cont_5_1 div.list div.innerWrap ul li:nth-child(7) div.box a {
+#product .cont_5_1 div.list div.innerWrap ul li:nth-child(7) div.box a {
     background-image: url(../img/prodect/05_0il_diffusion_pump/dpf_22zq.jpg);
 }
-#product.cont_5_1 div.list div.innerWrap ul li:nth-child(8) div.box a {
+#product .cont_5_1 div.list div.innerWrap ul li:nth-child(8) div.box a {
     background-image: url(../img/prodect/05_0il_diffusion_pump/dpf_28zq.jpg);
 }
-#product.cont_5_1 div.list div.innerWrap ul li:nth-child(9) div.box a {
+#product .cont_5_1 div.list div.innerWrap ul li:nth-child(9) div.box a {
     background-image: url(../img/prodect/05_0il_diffusion_pump/dpf_36zq.jpg);
 }
 
-#product.cont_5_2 div.list div.innerWrap ul li:nth-child(1) div.box a {
-    background-image: url(../img/prodect/05_0il_diffusion_pump/acc/diffusion_pump_oil.png);
+#product .cont_5_2 div.list div.innerWrap ul li:nth-child(1) div.box a {
+    background-image: url(../img/prodect/05_0il_diffusion_pump/acc/diffusion_pump_oil.jpg);
 }
-#product.cont_5_2 div.list div.innerWrap ul li:nth-child(2) div.box a {
+#product .cont_5_2 div.list div.innerWrap ul li:nth-child(2) div.box a {
     background-image: url(../img/prodect/05_0il_diffusion_pump/acc/air_cooled_baffle.jpg);
 }
-#product.cont_5_2 div.list div.innerWrap ul li:nth-child(3) div.box a {
+#product .cont_5_2 div.list div.innerWrap ul li:nth-child(3) div.box a {
     background-image: url(../img/prodect/05_0il_diffusion_pump/acc/LN2_cold_trap.jpg);
 }
-#product.cont_5_2 div.list div.innerWrap ul li:nth-child(4) div.box a {
+#product .cont_5_2 div.list div.innerWrap ul li:nth-child(4) div.box a {
     background-image: url(../img/prodect/05_0il_diffusion_pump/acc/water_cooled_baffle.jpg);
 }
 
-#product.cont_6_1 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_6_1 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/06_valves/angle/luavb_type.jpg);
 }
-#product.cont_6_1 div.list div.innerWrap ul li:nth-child(2) div.box a {
-    background-image: url(../img/prodect/06_valves/angle/luavb_type.jpg);
+#product .cont_6_1 div.list div.innerWrap ul li:nth-child(2) div.box a {
+    background-image: url(../img/prodect/06_valves/angle/luvb_type.jpg);
 }
-#product.cont_6_1 div.list div.innerWrap ul li:nth-child(3) div.box a {
-    background-image: url(../img/prodect/06_valves/angle/luavb_type.jpg);
+#product .cont_6_1 div.list div.innerWrap ul li:nth-child(3) div.box a {
+    background-image: url(../img/prodect/06_valves/angle/lcav_type.jpg);
 }
-#product.cont_6_1 div.list div.innerWrap ul li:nth-child(4) div.box a {
-    background-image: url(../img/prodect/06_valves/angle/luavb_type.jpg);
+#product .cont_6_1 div.list div.innerWrap ul li:nth-child(4) div.box a {
+    background-image: url(../img/prodect/06_valves/angle/lcvb_type.jpg);
 }
-#product.cont_6_1 div.list div.innerWrap ul li:nth-child(5) div.box a {
-    background-image: url(../img/prodect/06_valves/angle/luavb_type.jpg);
+#product .cont_6_1 div.list div.innerWrap ul li:nth-child(5) div.box a {
+    background-image: url(../img/prodect/06_valves/angle/lcv_type.jpg);
 }
-#product.cont_6_1 div.list div.innerWrap ul li:nth-child(6) div.box a {
-    background-image: url(../img/prodect/06_valves/angle/luavb_type.jpg);
+#product .cont_6_1 div.list div.innerWrap ul li:nth-child(6) div.box a {
+    background-image: url(../img/prodect/06_valves/angle/lav_type.jpg);
 }
-#product.cont_6_1 div.list div.innerWrap ul li:nth-child(7) div.box a {
-    background-image: url(../img/prodect/06_valves/angle/luavb_type.jpg);
+#product .cont_6_1 div.list div.innerWrap ul li:nth-child(7) div.box a {
+    background-image: url(../img/prodect/06_valves/angle/lv_type.jpg);
 }
-#product.cont_6_1 div.list div.innerWrap ul li:nth-child(8) div.box a {
+#product .cont_6_1 div.list div.innerWrap ul li:nth-child(8) div.box a {
     background-image: url(../img/prodect/06_valves/angle/sus_ball_valve.jpg);
 }
 
-#product.cont_6_2 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_6_2 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/06_valves/auto_vent/lclv_type.jpg);
 }
 
-#product.cont_7_1 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_7_1 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/07_flange/CF_flange/cf_rotable_bored_flanges.jpg);
 }
-#product.cont_7_1 div.list div.innerWrap ul li:nth-child(2) div.box a {
+#product .cont_7_1 div.list div.innerWrap ul li:nth-child(2) div.box a {
     background-image: url(../img/prodect/07_flange/CF_flange/cf_non_rotatable_bored_flanges.jpg);
 }
-#product.cont_7_1 div.list div.innerWrap ul li:nth-child(3) div.box a {
+#product .cont_7_1 div.list div.innerWrap ul li:nth-child(3) div.box a {
     background-image: url(../img/prodect/07_flange/CF_flange/cf_rotatable_blank_flanges.jpg);
 }
-#product.cont_7_1 div.list div.innerWrap ul li:nth-child(4) div.box a {
+#product .cont_7_1 div.list div.innerWrap ul li:nth-child(4) div.box a {
     background-image: url(../img/prodect/07_flange/CF_flange/cf_non_rotatable_blank_flanges.jpg);
 }
-#product.cont_7_1 div.list div.innerWrap ul li:nth-child(5) div.box a {
+#product .cont_7_1 div.list div.innerWrap ul li:nth-child(5) div.box a {
     background-image: url(../img/prodect/07_flange/CF_flange/cf_double_side_flanges.jpg);
 }
 
-#product.cont_7_2 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_7_2 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/07_flange/NW_flange/nw_socket_flanges.jpg);
 }
 
-#product.cont_7_3 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_7_3 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/07_flange/ISO_flange/iso_blank_flanges.jpg);
 }
-#product.cont_7_3 div.list div.innerWrap ul li:nth-child(2) div.box a {
+#product .cont_7_3 div.list div.innerWrap ul li:nth-child(2) div.box a {
     background-image: url(../img/prodect/07_flange/ISO_flange/iso_bored_flanges.jpg);
 }
 
-#product.cont_7_4 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_7_4 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/07_flange/JIS_flange/non_rotatable_vf_bored_flanges.jpg);
 }
-#product.cont_7_4 div.list div.innerWrap ul li:nth-child(2) div.box a {
+#product .cont_7_4 div.list div.innerWrap ul li:nth-child(2) div.box a {
     background-image: url(../img/prodect/07_flange/JIS_flange/non_rotatable_vg_bored_flanges.jpg);
 }
 
-#product.cont_8_1 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_8_1 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/08_fitting/CF_flange_fitting/cf_copper_gaskets.jpg);
 }
 
-#product.cont_8_2 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_8_2 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/08_fitting/NW_flange_fitting/nw_quick_clamps.jpg);
 }
-#product.cont_8_2 div.list div.innerWrap ul li:nth-child(2) div.box a {
+#product .cont_8_2 div.list div.innerWrap ul li:nth-child(2) div.box a {
     background-image: url(../img/prodect/08_fitting/NW_flange_fitting/nw_center_rings.jpg);
 }
-#product.cont_8_2 div.list div.innerWrap ul li:nth-child(3) div.box a {
+#product .cont_8_2 div.list div.innerWrap ul li:nth-child(3) div.box a {
     background-image: url(../img/prodect/08_fitting/NW_flange_fitting/nw_flexible_tubes.jpg);
 }
-#product.cont_8_2 div.list div.innerWrap ul li:nth-child(4) div.box a {
+#product .cont_8_2 div.list div.innerWrap ul li:nth-child(4) div.box a {
     background-image: url(../img/prodect/08_fitting/NW_flange_fitting/nw_4_ways.jpg);
 }
-#product.cont_8_2 div.list div.innerWrap ul li:nth-child(5) div.box a {
+#product .cont_8_2 div.list div.innerWrap ul li:nth-child(5) div.box a {
     background-image: url(../img/prodect/08_fitting/NW_flange_fitting/nw_90_radious_elbows.jpg);
 }
-#product.cont_8_2 div.list div.innerWrap ul li:nth-child(6) div.box a {
+#product .cont_8_2 div.list div.innerWrap ul li:nth-child(6) div.box a {
     background-image: url(../img/prodect/08_fitting/NW_flange_fitting/nw_half_nipples.jpg);
 }
 
-#product.cont_8_3 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_8_3 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/08_fitting/ISO_flange_fitting/iso_center_rings.jpg);
 }
-#product.cont_8_3 div.list div.innerWrap ul li:nth-child(2) div.box a {
+#product .cont_8_3 div.list div.innerWrap ul li:nth-child(2) div.box a {
     background-image: url(../img/prodect/08_fitting/ISO_flange_fitting/iso_double_claw_clamps.jpg);
 }
-#product.cont_8_3 div.list div.innerWrap ul li:nth-child(3) div.box a {
+#product .cont_8_3 div.list div.innerWrap ul li:nth-child(3) div.box a {
     background-image: url(../img/prodect/08_fitting/ISO_flange_fitting/iso_single_claw_clamps.jpg);
 }
 
-#product.cont_9_1 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_9_1 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/09_gauge/transducer/tr_1db.jpg);
 }
-#product.cont_9_1 div.list div.innerWrap ul li:nth-child(2) div.box a {
+#product .cont_9_1 div.list div.innerWrap ul li:nth-child(2) div.box a {
     background-image: url(../img/prodect/09_gauge/transducer/ftr_1.jpg);
 }
 
-#product.cont_9_2 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_9_2 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/09_gauge/pirani/pt_3p\(m\).jpg);
 }
-#product.cont_9_2 div.list div.innerWrap ul li:nth-child(2) div.box a {
+#product .cont_9_2 div.list div.innerWrap ul li:nth-child(2) div.box a {
     background-image: url(../img/prodect/09_gauge/pirani/pt_9p\(m\).jpg);
 }
-#product.cont_9_2 div.list div.innerWrap ul li:nth-child(3) div.box a {
+#product .cont_9_2 div.list div.innerWrap ul li:nth-child(3) div.box a {
     background-image: url(../img/prodect/09_gauge/pirani/pt_4p.jpg);
 }
-#product.cont_9_2 div.list div.innerWrap ul li:nth-child(4) div.box a {
+#product .cont_9_2 div.list div.innerWrap ul li:nth-child(4) div.box a {
     background-image: url(../img/prodect/09_gauge/pirani/pt_3da.jpg);
 }
-#product.cont_9_2 div.list div.innerWrap ul li:nth-child(5) div.box a {
+#product .cont_9_2 div.list div.innerWrap ul li:nth-child(5) div.box a {
     background-image: url(../img/prodect/09_gauge/pirani/pc_615n.jpg);
 }
 
-#product.cont_9_3 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_9_3 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/09_gauge/penning/ct_2pm.jpg);
 }
-#product.cont_9_3 div.list div.innerWrap ul li:nth-child(2) div.box a {
+#product .cont_9_3 div.list div.innerWrap ul li:nth-child(2) div.box a {
     background-image: url(../img/prodect/09_gauge/penning/ct_3da.jpg);
 }
 
-#product.cont_9_4 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_9_4 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/09_gauge/ionization/it_3da.jpg);
 }
-#product.cont_9_4 div.list div.innerWrap ul li:nth-child(2) div.box a {
+#product .cont_9_4 div.list div.innerWrap ul li:nth-child(2) div.box a {
     background-image: url(../img/prodect/09_gauge/ionization/it_10p.jpg);
 }
-#product.cont_9_4 div.list div.innerWrap ul li:nth-child(3) div.box a {
+#product .cont_9_4 div.list div.innerWrap ul li:nth-child(3) div.box a {
     background-image: url(../img/prodect/09_gauge/ionization/it_l20p.jpg);
 }
 
-#product.cont_9_5 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_9_5 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/09_gauge/combination/pc3da.jpg);
 }
-#product.cont_9_5 div.list div.innerWrap ul li:nth-child(2) div.box a {
+#product .cont_9_5 div.list div.innerWrap ul li:nth-child(2) div.box a {
     background-image: url(../img/prodect/09_gauge/combination/trpc_10.jpg);
 }
 
-#product.cont_9_6 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_9_6 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/09_gauge/tube/psg_1.jpg);
 }
 
-#product.cont_10_1 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_10_1 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/10_system/combination_exhaust/kbp_300_ghp_800k.jpg);
 }
-#product.cont_10_1 div.list div.innerWrap ul li:nth-child(2) div.box a {
+#product .cont_10_1 div.list div.innerWrap ul li:nth-child(2) div.box a {
     background-image: url(../img/prodect/10_system/combination_exhaust/kbp_600_ghp_1300k.jpg);
 }
-#product.cont_10_1 div.list div.innerWrap ul li:nth-child(3) div.box a {
+#product .cont_10_1 div.list div.innerWrap ul li:nth-child(3) div.box a {
     background-image: url(../img/prodect/10_system/combination_exhaust/kbp_1200_ghp_3500d.jpg);
 }
-#product.cont_10_1 div.list div.innerWrap ul li:nth-child(4) div.box a {
+#product .cont_10_1 div.list div.innerWrap ul li:nth-child(4) div.box a {
     background-image: url(../img/prodect/10_system/combination_exhaust/kbp_2700_ghp_6000d.jpg);
 }
-#product.cont_10_1 div.list div.innerWrap ul li:nth-child(5) div.box a {
+#product .cont_10_1 div.list div.innerWrap ul li:nth-child(5) div.box a {
     background-image: url(../img/prodect/10_system/combination_exhaust/kbp_2700_krp_4500.jpg);
 }
-#product.cont_10_1 div.list div.innerWrap ul li:nth-child(6) div.box a {
+#product .cont_10_1 div.list div.innerWrap ul li:nth-child(6) div.box a {
     background-image: url(../img/prodect/10_system/combination_exhaust/kbp_2700_krp_8000.jpg);
 }
-#product.cont_10_1 div.list div.innerWrap ul li:nth-child(7) div.box a {
+#product .cont_10_1 div.list div.innerWrap ul li:nth-child(7) div.box a {
     background-image: url(../img/prodect/10_system/combination_exhaust/kbp_3800_ghp_10000s.jpg);
 }
 
-#product.cont_10_2 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_10_2 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/10_system/sputtering/gaia_30s.jpg);
 }
-#product.cont_10_2 div.list div.innerWrap ul li:nth-child(2) div.box a {
+#product .cont_10_2 div.list div.innerWrap ul li:nth-child(2) div.box a {
     background-image: url(../img/prodect/10_system/sputtering/gaia_60s.jpg);
 }
-#product.cont_10_2 div.list div.innerWrap ul li:nth-child(3) div.box a {
+#product .cont_10_2 div.list div.innerWrap ul li:nth-child(3) div.box a {
     background-image: url(../img/prodect/10_system/sputtering/gaia_75e.jpg);
 }
-#product.cont_10_2 div.list div.innerWrap ul li:nth-child(4) div.box a {
+#product .cont_10_2 div.list div.innerWrap ul li:nth-child(4) div.box a {
     background-image: url(../img/prodect/10_system/sputtering/gaia_80c.jpg);
 }
-#product.cont_10_2 div.list div.innerWrap ul li:nth-child(5) div.box a {
+#product .cont_10_2 div.list div.innerWrap ul li:nth-child(5) div.box a {
     background-image: url(../img/prodect/10_system/sputtering/gaia_140s.jpg);
 }
 
-#product.cont_10_3 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_10_3 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/10_system/evaporation/evaporation_system.jpg);
 }
 
-#product.cont_10_4 div.list div.innerWrap ul li:nth-child(1) div.box a {
+#product .cont_10_4 div.list div.innerWrap ul li:nth-child(1) div.box a {
     background-image: url(../img/prodect/10_system/center_valve_type_sealing_equipment/center_valve_type_sealling_equipment.jpg);
 }
 
-/* 
 #product div.list div.innerWrap ul li.empty {
     float: none;
     width: 100%;
@@ -2118,8 +2242,17 @@ div.greet div.imageBox1 div.innerWrap span.thumb1 img {
 #product div.detail div.innerWrap div.image div.imageBox {
     position: relative;
     height: 100%;
-    padding: 20px 60px;
+    padding: 20px;
     overflow: hidden;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#product div.detail div.innerWrap div.image div.imageBox img {
+    /* object-fit: contain;
+    width: 100%; */
+    object-fit: cover;
+    height: 100%;
 }
 
 #product div.detail div.innerWrap div.image div.imageBox span {
@@ -2163,7 +2296,7 @@ div.greet div.imageBox1 div.innerWrap span.thumb1 img {
 #product div.detail div.innerWrap div.image div.control button span {
     display: none;
 }
-*/
+
 
 #product div.detail div.innerWrap div.item {
 }
@@ -2181,7 +2314,8 @@ div.greet div.imageBox1 div.innerWrap span.thumb1 img {
     padding-left: 35px;
     font-size: 24px;
     font-weight: 600;
-    background: url('../images/sub/prodContList.png') no-repeat left center;
+    background: url(../img/main/visual_img.png) no-repeat 5px 8px;
+    background-size: 25px;
 }
 
 #product div.detail div.innerWrap div.item div.itemList div.value {
@@ -2211,7 +2345,7 @@ div.greet div.imageBox1 div.innerWrap span.thumb1 img {
     padding: 12px 0;
     font-weight: 600;
     border-left: 1px solid #ececec;
-    background-color: #5d7cbc;
+    background-color: #5c5c5c;
     color: #fff;
 }
 
@@ -2265,8 +2399,9 @@ div.greet div.imageBox1 div.innerWrap span.thumb1 img {
     padding: 18px 60px;
     font-size: 18px;
     border-radius: 5px;
-    background-color: #5d7cbc;
-    color: #fff;
+    /* background-color: #5d7cbc;
+    color: #fff; */
+    border: 1px solid #ddd;
 }
 
 /* BOARD */
@@ -3725,17 +3860,19 @@ a.button {
 /* ì „ì²´ ë°˜ì‘í˜• */
 @media (max-width: 1200px) {
     #header {
-        padding: 0 10px;
+        /* padding: 0 10px; */
+        padding: 0 35px;
     }
 
     #gnb {
+        display: none;
         padding-left: 20px;
     }
 
-    #header div.innerWrap h1 {
+    /* #header div.innerWrap h1 {
         width: 190px;
         padding: 25px 0;
-    }
+    } */
 
     #gnb ul.navi.depth1 > li {
         padding: 28px 20px;
@@ -3814,13 +3951,13 @@ a.button {
         display: none; */
     }
 
-    #header {
+    /* #header {
         height: 70px;
-    }
+    } */
 
-    #header div.innerWrap h1 {
+    /* #header div.innerWrap h1 {
         padding: 15px 0;
-    }
+    } */
 
     #header div.search {
         display: none;
@@ -4090,11 +4227,12 @@ a.button {
     }
 
     #visual div.visualArea {
-        padding: 30px 10px 0;
+        /* padding: 30px 10px 0; */
+        padding: 0 10px;
     }
 
     #visual div.visualArea ul.visual {
-        height: 500px;
+        /* height: 500px; */
     }
 
     #visual div.visualArea ul.visual li {
@@ -4277,8 +4415,8 @@ a.button {
         display: none;
     }
 
-    #container div.pageTitle div.innerWrap div.title span.mTitle {
-        font-size: 36px;
+    #container div.pageTitle div.innerWrap div.title .h_title .mTitle {
+        /* font-size: 36px; */
     }
 
     #container.sub div.content {
@@ -4640,18 +4778,18 @@ a.button {
         display: none;
     }
 
-    #product div.list div.innerWrap ul li {
+    /* #product div.list div.innerWrap ul li {
         margin-bottom: 50px;
-    }
+    } */
 
     #product div.detail {
         margin-top: 40px;
     }
 
-    #product div.detail div.innerWrap div.title {
+    /* #product div.detail div.innerWrap div.title {
         font-size: 40px;
         margin-bottom: 30px;
-    }
+    } */
 
     #product div.detail div.innerWrap div.image {
         height: 400px;
@@ -4872,24 +5010,22 @@ a.button {
         font-weight: 600;
     }
 
-    #container div.pageTitle div.innerWrap div.title {
+    /* #container div.pageTitle div.innerWrap div.title {
         padding-bottom: 10px;
-        /* kji */
-        display: block;
-    }
+    } */
 
     /* kji */
     #container div.pageTitle div.innerWrap div.title .btn_area {
-        margin-left: 0;
+        /* margin-left: 0; */
         margin-top: 10px;
     }
 
-    #container div.pageTitle div.innerWrap div.title span.sTitle {
-        font-size: 16px;
+    #container div.pageTitle div.innerWrap div.title .h_title .sTitle {
+        /* font-size: 16px; */
     }
 
-    #container div.pageTitle div.innerWrap div.title span.mTitle {
-        font-size: 28px;
+    #container div.pageTitle div.innerWrap div.title .h_title .mTitle {
+        /* font-size: 28px; */
     }
 
     #greeting div.innerWrap div.txtBox p {
@@ -5011,7 +5147,7 @@ a.button {
 
     #product div.list div.innerWrap ul li {
         width: 33.3%;
-        margin-bottom: 40px;
+        /* margin-bottom: 40px; */
     }
 
     #product div.detail div.innerWrap div.item div.itemList div.value div.kor {
@@ -5376,6 +5512,11 @@ a.button {
         margin-bottom: 30px;
     }
 
+    #product div.list div.innerWrap ul li div.box a span.name {
+        /* kji */
+        font-size: 12px;
+    }
+
     #product div.detail div.innerWrap div.item div.itemList div.value div.kor ul li, #product div.detail div.innerWrap div.item div.itemList div.value div.eng ul li {
         font-size: 13px;
     }
@@ -5458,7 +5599,7 @@ a.button {
 
     #product div.list div.innerWrap ul li {
         width: 50%;
-        margin-bottom: 30px;
+        /* margin-bottom: 30px; */
     }
 
     #product div.detail div.innerWrap div.title {

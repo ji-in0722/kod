@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const targetEl = document.getElementById(targetId);
     if (!targetEl) return;
 
-    const paths = [`./${fileName}`, `../${fileName}`, `../../${fileName}`, `/${fileName}`];
+    const paths = [`./${fileName}`, `../${fileName}`, `../../${fileName}`,  `../../../${fileName}`, `../../../../${fileName}`,`/${fileName}`];
 
     for (const path of paths) {
       try {

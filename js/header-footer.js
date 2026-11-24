@@ -1,23 +1,31 @@
+// 현재 실행 중인 header-footer.js 파일의 실제 전체 주소를 가져옴
+// 예: https://github.io
+const currentScriptSrc = document.currentScript ? document.currentScript.src : '';
+
+// '/js/' 앞부분까지의 정확한 프로젝트 루트 주소를 추출
+// 예: https://github.io
+const baseUrl = currentScriptSrc.includes('/js/')
+  ? currentScriptSrc.substring(0, currentScriptSrc.lastIndexOf('/js/'))
+  : '.';
+
 document.addEventListener('DOMContentLoaded', async () => {
-  // 공통 파일을 불러오는 함수
   async function loadComponent(targetId, fileName) {
     const targetEl = document.getElementById(targetId);
     if (!targetEl) return;
 
-    const paths = [`./${fileName}`, `../${fileName}`, `../../${fileName}`,  `../../../${fileName}`, `../../../../${fileName}`,`/${fileName}`];
-
-    for (const path of paths) {
-      try {
-        const response = await fetch(path);
-        if (response.ok) {
-          targetEl.innerHTML = await response.text();
-          break;
-        }
-      } catch (e) {}
+    try {
+      // 추출된 정확한 루트 주소에서 바로 파일을 가져옴
+      const response = await fetch(`${baseUrl}/${fileName}`);
+      if (response.ok) {
+        targetEl.innerHTML = await response.text();
+      } else {
+        console.error(`${fileName} 로드 실패 (상태코드: ${response.status}):`, `${baseUrl}/${fileName}`);
+      }
+    } catch (e) {
+      console.error(`${fileName} 네트워크 오류:`, e);
     }
   }
 
-  // 헤더와 푸터 동시에 불러오기
   await Promise.all([
     loadComponent('header-placeholder', 'header.html'),
     loadComponent('footer-placeholder', 'footer.html')

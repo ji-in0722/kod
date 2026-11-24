@@ -30,4 +30,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     loadComponent('header-placeholder', 'header.html'),
     loadComponent('footer-placeholder', 'footer.html')
   ]);
+
+  // 헤더가 불러와진 후 로고 링크를 정확한 메인 주소로 자동 연결
+  const logoLink = document.querySelector('.logo_link');
+  if (logoLink) {
+    logoLink.href = `${baseUrl}/index.html`;
+  }
 });
